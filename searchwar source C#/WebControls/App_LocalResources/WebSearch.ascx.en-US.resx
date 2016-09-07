@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BtnSearchWarResource1.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="BtnSearchWarResource1.ToolTip" xml:space="preserve">
+    <value>Click here to search now</value>
+  </data>
+  <data name="DDLClanContinentResource1.ToolTip" xml:space="preserve">
+    <value>Choose your clans continent</value>
+  </data>
+  <data name="DDLClanCountryResource1.ToolTip" xml:space="preserve">
+    <value>Choose your clans country</value>
+  </data>
+  <data name="DDLClanSkillResource1.ToolTip" xml:space="preserve">
+    <value>Choose your clans skill</value>
+  </data>
+  <data name="DDLGameResource1.ToolTip" xml:space="preserve">
+    <value>Choose wanted game</value>
+  </data>
+  <data name="DDLGameTypeResource1.ToolTip" xml:space="preserve">
+    <value>Choose wanted game type/mode</value>
+  </data>
+  <data name="DDLLastSearchResource1.ToolTip" xml:space="preserve">
+    <value>View of the lastest search</value>
+  </data>
+  <data name="DDLSearchContinentResource1.ToolTip" xml:space="preserve">
+    <value>Choose continent you wanted to search from</value>
+  </data>
+  <data name="DDLSearchCountryResource1.ToolTip" xml:space="preserve">
+    <value>Choose country you wanted to search from</value>
+  </data>
+  <data name="DDLSearchDayFromResource1.Tooltip" xml:space="preserve">
+    <value>Choose from day the match should be</value>
+  </data>
+  <data name="DDLSearchDayToResource1.Tooltip" xml:space="preserve">
+    <value>Choose to day the match should be</value>
+  </data>
+  <data name="DDLSearchFromTimeHourResource1.Tooltip" xml:space="preserve">
+    <value>Choose from time (hour) the match should be</value>
+  </data>
+  <data name="DDLSearchFromTimeMinuteResource1.Tooltip" xml:space="preserve">
+    <value>Choose from time (minute) the match should be</value>
+  </data>
+  <data name="DDLSearchMonthFromResource1.Tooltip" xml:space="preserve">
+    <value>Choose from month the match should be</value>
+  </data>
+  <data name="DDLSearchMonthToResource1.Tooltip" xml:space="preserve">
+    <value>Choose month the match should end</value>
+  </data>
+  <data name="DDLSearchSkillResource1.ToolTip" xml:space="preserve">
+    <value>Choose the wanted skills of your enemy</value>
+  </data>
+  <data name="DDLSearchToTimeHourResource1.Tooltip" xml:space="preserve">
+    <value>Choose time (hour) the match should end</value>
+  </data>
+  <data name="DDLSearchToTimeMinuteResource1.Tooltip" xml:space="preserve">
+    <value>Choose time (minute) the match should end</value>
+  </data>
+  <data name="DDLSearchYearFromResource1.Tooltip" xml:space="preserve">
+    <value>Choose from year the match should be</value>
+  </data>
+  <data name="DDLSearchYearToResource1.Tooltip" xml:space="preserve">
+    <value>Choose Year the match should end</value>
+  </data>
+  <data name="DDLXvsResource1.Tooltip" xml:space="preserve">
+    <value>Choose number of players</value>
+  </data>
+  <data name="HyperAdvancedSearchResource1.Text" xml:space="preserve">
+    <value>Advanced Search</value>
+  </data>
+  <data name="HyperSearchSimpleLinkResource1.Text" xml:space="preserve">
+    <value>Simple Search</value>
+  </data>
+  <data name="LblClanContinentResource1.Text" xml:space="preserve">
+    <value>Your Continent</value>
+  </data>
+  <data name="LblClanContinentResource1.ToolTip" xml:space="preserve">
+    <value>Choose your clans continent</value>
+  </data>
+  <data name="LblClanCountryResource1.Text" xml:space="preserve">
+    <value>Your Country</value>
+  </data>
+  <data name="LblClanCountryResource1.ToolTip" xml:space="preserve">
+    <value>Choose your clans country</value>
+  </data>
+  <data name="LblClanNameResource1.Text" xml:space="preserve">
+    <value>Clan name</value>
+  </data>
+  <data name="LblClanNameResource1.ToolTip" xml:space="preserve">
+    <value>Insert your clans name</value>
+  </data>
+  <data name="LblClanSkillResource1.Text" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="LblClanSkillResource1.ToolTip" xml:space="preserve">
+    <value>Choose your clans skill</value>
+  </data>
+  <data name="LblGameResource1.Text" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="LblGameResource1.ToolTip" xml:space="preserve">
+    <value>Choose wanted game</value>
+  </data>
+  <data name="LblGameTypeResource1.Text" xml:space="preserve">
+    <value>Game Mode</value>
+  </data>
+  <data name="LblGameTypeResource1.ToolTip" xml:space="preserve">
+    <value>Choose wanted game type/mode</value>
+  </data>
+  <data name="LblLastSearchResource1.Text" xml:space="preserve">
+    <value>Last Search</value>
+  </data>
+  <data name="LblLastSearchResource1.Tooltip" xml:space="preserve">
+    <value>View of the lastest search</value>
+  </data>
+  <data name="LblMapResource1.Text" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="LblMapResource1.ToolTip" xml:space="preserve">
+    <value>Write the wanted name of map</value>
+  </data>
+  <data name="LblSearchContinentResource1.Text" xml:space="preserve">
+    <value>Continent</value>
+  </data>
+  <data name="LblSearchContinentResource1.ToolTip" xml:space="preserve">
+    <value>Choose continent you wanted to search from</value>
+  </data>
+  <data name="LblSearchCountryResource1.Text" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="LblSearchCountryResource1.ToolTip" xml:space="preserve">
+    <value>Choose country you wanted to search from</value>
+  </data>
+  <data name="LblSearchDateResource1.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="LblSearchDateResource1.Tooltip" xml:space="preserve">
+    <value>Choose wanted date the match should be</value>
+  </data>
+  <data name="LblSearchDateToResource1.Text" xml:space="preserve">
+    <value> from/to </value>
+  </data>
+  <data name="LblSearchSkillResource1.Text" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="LblSearchSkillResource1.ToolTip" xml:space="preserve">
+    <value>Choose the wanted skills of your enemy</value>
+  </data>
+  <data name="LblSearchTimeResource1.Text" xml:space="preserve">
+    <value>Time start</value>
+  </data>
+  <data name="LblSearchTimeResource1.Tooltip" xml:space="preserve">
+    <value>Choose wanted time the match should be</value>
+  </data>
+  <data name="LblSearchTimeToResource1.Text" xml:space="preserve">
+    <value> from/to </value>
+  </data>
+  <data name="LblVersusResource1.Text" xml:space="preserve">
+    <value> vs </value>
+  </data>
+  <data name="LblXvsXResource1.Text" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="LblXvsXResource1.Tooltip" xml:space="preserve">
+    <value>Choose number of player versus</value>
+  </data>
+  <data name="ListItemChooseEmptyResource1" xml:space="preserve">
+    <value>Select (Not requried)</value>
+  </data>
+  <data name="ListItemChooseResource1" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="TxtClanNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TxtClanNameResource1.ToolTip" xml:space="preserve">
+    <value>Insert your clans name</value>
+  </data>
+  <data name="TxtMapResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TxtMapResource1.ToolTip" xml:space="preserve">
+    <value>Write the wanted name of map</value>
+  </data>
+  <data name="TxtSearchGames.Text" xml:space="preserve">
+    <value>Search game name</value>
+  </data>
+  <data name="TxtSearchGames.Tooltip" xml:space="preserve">
+    <value>Write name of the game your are searching for in the box "Game"</value>
+  </data>
+  <data name="TxtSearchGameType.Text" xml:space="preserve">
+    <value>Search gametype name</value>
+  </data>
+  <data name="TxtSearchGameType.Tooltip" xml:space="preserve">
+    <value>Write name of the game type your are searching for in the box "Game Type"</value>
+  </data>
+  <data name="H2HeadClanResource1.InnerText" xml:space="preserve">
+    <value>Clan infomation</value>
+  </data>
+  <data name="H2HeadSearchResource1.InnerText" xml:space="preserve">
+    <value>Searching for</value>
+  </data>
+  <data name="CustomDdlSearchTime.ErrorMessage" xml:space="preserve">
+    <value>"From Time" must be smaller than "To Time"</value>
+  </data>
+  <data name="CustomSearchDate.ErrorMessage" xml:space="preserve">
+    <value>"From Date" must be smaller than "To Date"</value>
+  </data>
+  <data name="RequiredDdlClanContinent.ErrorMessage" xml:space="preserve">
+    <value>Your Continent is required!</value>
+  </data>
+  <data name="RequiredDdlClanCountry.ErrorMessage" xml:space="preserve">
+    <value>Your Country is required!</value>
+  </data>
+  <data name="RequiredDdlSearchContinent.ErrorMessage" xml:space="preserve">
+    <value>The search Continent is required!</value>
+  </data>
+  <data name="RequiredDdlSearchDayFrom.ErrorMessage" xml:space="preserve">
+    <value>The "from day" in date is required!</value>
+  </data>
+  <data name="RequiredDdlSearchDayTo.ErrorMessage" xml:space="preserve">
+    <value>The "to day" in date is required!</value>
+  </data>
+  <data name="RequiredDdlSearchGame.ErrorMessage" xml:space="preserve">
+    <value>Game is required!</value>
+  </data>
+  <data name="RequiredDdlSearchMonthFrom.ErrorMessage" xml:space="preserve">
+    <value>The "from month" in date is required!</value>
+  </data>
+  <data name="RequiredDdlSearchMonthTo.ErrorMessage" xml:space="preserve">
+    <value>The "to month" in date is required!</value>
+  </data>
+  <data name="RequiredDdlSearchvsX.ErrorMessage" xml:space="preserve">
+    <value>The last versus number is required!</value>
+  </data>
+  <data name="RequiredDdlSearchXvs.ErrorMessage" xml:space="preserve">
+    <value>The first versus number is required!</value>
+  </data>
+  <data name="RequiredDdlSearchYearFrom.ErrorMessage" xml:space="preserve">
+    <value>The "from year" in date is required!</value>
+  </data>
+  <data name="RequiredDdlSearchYearTo.ErrorMessage" xml:space="preserve">
+    <value>The "to year" in date is required!</value>
+  </data>
+  <data name="CustomSearchNowDate.ErrorMessage" xml:space="preserve">
+    <value>The "from" date must be higher than date now</value>
+  </data>
+  <data name="CustomSearchNowTime.ErrorMessage" xml:space="preserve">
+    <value>The "from" time must be higher than time now</value>
+  </data>
+  <data name="LblFromTo.Text" xml:space="preserve">
+    <value>From/To</value>
+  </data>
+  <data name="LblHeadClanCountry.Text" xml:space="preserve">
+    <value>Clan Country</value>
+  </data>
+  <data name="LblHeadClanSkill.Text" xml:space="preserve">
+    <value>Clan Skill</value>
+  </data>
+  <data name="LblHeadMap.Text" xml:space="preserve">
+    <value>Search Map</value>
+  </data>
+  <data name="LblHeadSearchCountry.Text" xml:space="preserve">
+    <value>Search Country</value>
+  </data>
+  <data name="LblHeadSearchPlayers.Text" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="LblHeadSearchSkill.Text" xml:space="preserve">
+    <value>Search Skill</value>
+  </data>
+  <data name="LblNoInfo.Text" xml:space="preserve">
+    <value>Not stated</value>
+  </data>
+  <data name="H1SearchInsert.InnerText" xml:space="preserve">
+    <value>What match are you searching for?</value>
+  </data>
+</root>

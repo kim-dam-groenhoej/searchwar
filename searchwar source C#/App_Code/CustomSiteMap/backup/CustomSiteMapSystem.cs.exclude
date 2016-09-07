@@ -1,0 +1,448 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data.Linq;
+using System.Web;
+using System.Web.Security;
+
+/// <summary>
+/// CustomSiteMap with LINQ (Database)
+/// </summary>
+namespace SearchWar.SiteMap
+{
+    public class CustomSiteMapSystem
+    {
+        
+        public CustomSiteMapSystem()
+        {
+            _siteMapNodeIds = new List<int>();
+        }
+
+
+        #region searchSiteMapNode
+
+        /// <summary>
+        /// Searching after path in database
+        /// </summary>
+        /// <param name="path">Insert path</param>
+        /// <param name="langId">Insert langId</param>
+        /// <returns>Return anonymous object</returns>
+        protected static object SearchSiteMapNode(string path,
+            int langId) {
+            // using statement free the memory after metode is done
+            using (Searchwar_netEntities db = new Searchwar_netEntities()) {
+
+                // Get the CurrentPath if "path" is null
+                if (string.IsNullOrEmpty(path)) {
+
+                    path = HttpContext.Current.Session["RealPage"].ToString();
+                    
+                }
+
+                // Get UserRoles
+                string[] roleNamesByUser = Roles.GetRolesForUser();
+
+                // Get the SiteMapNode by the "path"
+                object siteMapNodeNode = (from s in db.SW_SiteMapNodes
+                                          join sd in db.SW_SiteMapNodeDatas
+                                              on s.SiteMapNodeId equals sd.SiteMapNodeId
+                                          where s.SiteMapNodePath.ToLower() == path.ToLower() &&
+                                                sd.LangId == langId &&
+                                                (s.SW_SiteMapNodeRoles.Count() != 0 ? s.SW_SiteMapNodeRoles.Where(r => roleNamesByUser.Contains(r.aspnet_Role.RoleName)).Count() > 0 : true) == true
+                                          select new
+                                                     {
+                                                         SiteMapNodeId = (int)s.SiteMapNodeId,
+                                                         SiteMapNodeSubId = (int?)s.SiteMapNodeSubId,
+                                                         SiteMapNodePath = (string)s.SiteMapNodePath,
+                                                         SiteMapNodeAddedUserId = (Guid)s.SiteMapNodeAddedUserId,
+                                                         SiteMapNodeEditUserId = (Guid)s.SiteMapNodeEditUserId,
+                                                         SiteMapNodeShow = (bool)s.SiteMapNodeShow,
+                                                         SiteMapNodeAddedDate = (DateTime)s.SiteMapNodeAddedDate,
+                                                         SiteMapNodeEditDate = (DateTime)s.SiteMapNodeEditDate,
+                                                         SiteMapNodeTitle = (string)sd.SiteMapNodeTitle,
+                                                         LangId = (int)sd.LangId,
+                                                         SW_SiteMapNodeRoles = s.SW_SiteMapNodeRoles.Where(r => r.SiteMapNodeId == s.SiteMapNodeId)
+                                                         // Check if user is allowed to see SiteMapNodes
+                                                     }).SingleOrDefault();
+
+                // Checking SiteMapNode is in databasen
+                if (siteMapNodeNode != null) {
+
+                    return siteMapNodeNode;
+
+                } else {
+
+                    throw (new ArgumentNullException("path", "Cant find '" + path + "' in database"));
+
+                }
+
+
+            }
+
+        }
+
+
+        /// <summary>
+        /// Get parentpath of the inserted path
+        /// </summary>
+        /// <param name="path">Insert path</param>
+        /// <returns>Return parentpath - anonymous object</returns>
+        protected static object SearchParentSiteMapNode(string path) {
+            // using statement free the memory after metode is done
+            using (Searchwar_netEntities db = new Searchwar_netEntities()) {
+
+                // Get UserRoles
+                string[] roleNamesByUser = Roles.GetRolesForUser();
+
+                // Find the parentSiteMapNode by "path"
+                object parentSiteMapNode = (from s in db.SW_SiteMapNodes
+                                            join sd in db.SW_SiteMapNodeDatas
+                                                on s.SiteMapNodeId equals sd.SiteMapNodeId
+                                            join ss in db.SW_SiteMapNodes
+                                                on s.SiteMapNodeId equals ss.SiteMapNodeId
+                                            where ss.SiteMapNodePath.ToLower() == path.ToLower() &&
+                                                  (s.SW_SiteMapNodeRoles.Count() != 0 ? s.SW_SiteMapNodeRoles.Where(r => roleNamesByUser.Contains(r.aspnet_Role.RoleName)).Count() > 0 : true) == true
+                                            select new
+                                                       {
+                                                           SiteMapNodeId = (int)s.SiteMapNodeId,
+                                                           SiteMapNodeSubId = (int?)s.SiteMapNodeSubId,
+                                                           SiteMapNodePath = (string)s.SiteMapNodePath,
+                                                           SiteMapNodeAddedUserId = (Guid)s.SiteMapNodeAddedUserId,
+                                                           SiteMapNodeEditUserId = (Guid)s.SiteMapNodeEditUserId,
+                                                           SiteMapNodeShow = (bool)s.SiteMapNodeShow,
+                                                           SiteMapNodeAddedDate = (DateTime)s.SiteMapNodeAddedDate,
+                                                           SiteMapNodeEditDate = (DateTime)s.SiteMapNodeEditDate,
+                                                           SiteMapNodeTitle = (string)sd.SiteMapNodeTitle,
+                                                           LangId = (int)sd.LangId,
+                                                           SW_SiteMapNodeRoles = s.SW_SiteMapNodeRoles.Where(r => r.SiteMapNodeId == s.SiteMapNodeId)
+                                                           // Check if user is allowed to see SiteMapNodes
+                                                       }).SingleOrDefault();
+
+
+                // Checking SiteMapNode is in database
+                if (parentSiteMapNode != null) {
+
+                    return parentSiteMapNode;
+
+                } else {
+
+                    throw (new ArgumentNullException("Path", "Found no ParentPath in database for '" + path + "'"));
+
+                }
+
+            }
+
+        } 
+        #endregion
+
+        #region getSiteMapNodes
+        /// <summary>
+        /// Get all MainPaths (MainPaths is paths without a SiteMapSubId)
+        /// </summary>
+        /// <returns>Return a list of anonymous objects</returns>
+        protected static List<object> GetMainSiteMapNodes(int langId) {
+            // using statement free the memory after metode is done
+            using (Searchwar_netEntities db = new Searchwar_netEntities()) {
+                // Get UserRoles
+                string[] roleNamesByUser = Roles.GetRolesForUser();
+
+                // Get all SiteMaps
+                return (from s in db.SW_SiteMapNodes
+                        join sd in db.SW_SiteMapNodeDatas
+                        on s.SiteMapNodeId equals sd.SiteMapNodeId
+                        where s.SiteMapNodeSubId == null
+                        && s.SiteMapNodeShow == true
+                        && sd.LangId == langId &&
+                            // Check if user is allowed to see SiteMaps
+                        (s.SW_SiteMapNodeRoles.Count() != 0 ? s.SW_SiteMapNodeRoles.Where(r => roleNamesByUser.Contains(r.aspnet_Role.RoleName)).Count() > 0 : true) == true
+                        select new
+                        {
+                            SiteMapNodeId = (int)s.SiteMapNodeId,
+                            SiteMapNodePath = (string)s.SiteMapNodePath,
+                            SiteMapNodeAddedUserId = (Guid)s.SiteMapNodeAddedUserId,
+                            SiteMapNodeEditUserId = (Guid)s.SiteMapNodeEditUserId,
+                            SiteMapNodeShow = (bool)s.SiteMapNodeShow,
+                            SiteMapNodeAddedDate = (DateTime)s.SiteMapNodeAddedDate,
+                            SiteMapNodeEditDate = (DateTime)s.SiteMapNodeEditDate,
+                            SiteMapNodeTitle = (string)sd.SiteMapNodeTitle,
+                            LangId = (int)sd.LangId,
+                            SW_SiteMapNodeRoles = s.SW_SiteMapNodeRoles.Where(r => r.SiteMapNodeId == s.SiteMapNodeId).ToList<SW_SiteMapNodeRole>()
+                        }).Cast<object>().ToList<object>();
+            }
+        }
+
+
+        /// <summary>
+        /// Get all SubPaths
+        /// </summary>
+        /// <param name="langId">Insert langId</param>
+        /// <param name="siteMapNodeId">Insert SiteMapId</param>
+        /// <returns>Return a list of anonymous objects</returns>
+        protected static List<object> GetSubSiteMapNodes(int langId,
+            int siteMapNodeId) {
+            // using statement free the memory after metode is done
+            using (Searchwar_netEntities db = new Searchwar_netEntities()) {
+                // Get UserRoles
+                string[] roleNamesByUser = Roles.GetRolesForUser();
+
+                // Get all SiteMaps
+                return (from s in db.SW_SiteMapNodes
+                        join sd in db.SW_SiteMapNodeDatas
+                        on s.SiteMapNodeId equals sd.SiteMapNodeId
+                        where s.SiteMapNodeSubId == siteMapNodeId
+                        && s.SiteMapNodeShow == true
+                        && sd.LangId == langId &&
+                            // Check if user is allowed to see SiteMaps
+                        (s.SW_SiteMapNodeRoles.Count() != 0 ? s.SW_SiteMapNodeRoles.Where(r => roleNamesByUser.Contains(r.aspnet_Role.RoleName)).Count() > 0 : true) == true
+                        select new
+                        {
+                            SiteMapNodeId = (int)s.SiteMapNodeId,
+                            SiteMapNodeSubId = (int?)s.SiteMapNodeSubId,
+                            SiteMapNodePath = (string)s.SiteMapNodePath,
+                            SiteMapNodeAddedUserId = (Guid)s.SiteMapNodeAddedUserId,
+                            SiteMapNodeEditUserId = (Guid)s.SiteMapNodeEditUserId,
+                            SiteMapNodeShow = (bool)s.SiteMapNodeShow,
+                            SiteMapNodeAddedDate = (DateTime)s.SiteMapNodeAddedDate,
+                            SiteMapNodeEditDate = (DateTime)s.SiteMapNodeEditDate,
+                            SiteMapNodeTitle = (string)sd.SiteMapNodeTitle,
+                            LangId = (int)sd.LangId,
+                            SW_SiteMapNodeRoles = s.SW_SiteMapNodeRoles.Where(r => r.SiteMapNodeId == s.SiteMapNodeId)
+                        }).Cast<object>().ToList<object>();
+            }
+        } 
+        #endregion
+
+
+        #region deleteSiteMapNodes
+        private List<int> _siteMapNodeIds;
+
+        /// <summary>
+        /// Add siteMapNodeId to List for Delete Paths
+        /// </summary>
+        /// <param name="siteMapNodeId">Insert SiteMapId</param>
+        protected void AddSiteMapNodeId(int siteMapNodeId) {
+
+            _siteMapNodeIds.Add(siteMapNodeId);
+
+        }
+
+
+        /// <summary>
+        /// Remove siteMapNodeId from List
+        /// </summary>
+        /// <param name="siteMapNodeId"></param>
+        protected void RemoveSiteMapNodeId(int siteMapNodeId) {
+
+            _siteMapNodeIds.Remove(siteMapNodeId);
+
+        }
+
+
+        /// <summary>
+        /// Clear List of SiteMapNodeIds
+        /// </summary>
+        protected void ClearSiteMapNodeIds() {
+
+            _siteMapNodeIds.Clear();
+
+        }
+
+
+
+        /// <summary>
+        /// Delete paths in SiteMapNodes
+        /// </summary>
+        protected void DeleteSiteMapNodes() {
+
+            // using statement free the memory after metode is done
+            using (Searchwar_netEntities db = new Searchwar_netEntities()) {
+
+                // Check RemoveRoleIds for empty
+                if (_siteMapNodeIds.Count() != 0) {
+
+                    IQueryable<SW_SiteMapNode> deleteSiteMapNodes = (from s in db.SW_SiteMapNodes
+                                                                     where _siteMapNodeIds.Contains(s.SiteMapNodeId)
+                                                                     select s).AsQueryable<SW_SiteMapNode>();
+
+                    IQueryable<SW_SiteMapNodeData> deleteSiteMapNodesData = (from sd in db.SW_SiteMapNodeDatas
+                                                                             where _siteMapNodeIds.Contains(sd.SiteMapNodeId)
+                                                                             select sd).AsQueryable<SW_SiteMapNodeData>();
+
+                    IQueryable<SW_SiteMapNodeRole> DeleteSiteMapNodesRoles = (from r in db.SW_SiteMapNodeRoles
+                                                                              where _siteMapNodeIds.Contains(r.SiteMapNodeId)
+                                                                              select r).AsQueryable<SW_SiteMapNodeRole>();
+
+                    IQueryable<SW_SiteMapNodeMetaTag> deleteSiteMapNodesMetaTags = (from m in db.SW_SiteMapNodeMetaTags
+                                                                                    where _siteMapNodeIds.Contains(m.MetaTagsId)
+                                                                                    select m).AsQueryable<SW_SiteMapNodeMetaTag>();
+
+                    IQueryable<SW_SiteMapNodeMetaTagsData> deleteSiteMapNodesMetaTagsData = (from md in db.SW_SiteMapNodeMetaTagsDatas
+                                                                                             where _siteMapNodeIds.Contains(md.MetaTagsId)
+                                                                                             select md).AsQueryable<SW_SiteMapNodeMetaTagsData>();
+
+                    // Delete all SiteMapNodesMetaTagsData
+                    db.SW_SiteMapNodeMetaTagsDatas.DeleteAllOnSubmit(deleteSiteMapNodesMetaTagsData);
+
+                    // Delete all SiteMapNodesMetaTags
+                    db.SW_SiteMapNodeMetaTags.DeleteAllOnSubmit(deleteSiteMapNodesMetaTags);
+
+                    // Delete all SiteMapNodesRoles
+                    db.SW_SiteMapNodeRoles.DeleteAllOnSubmit(DeleteSiteMapNodesRoles);
+
+                    // Delete all SiteMapNodesData
+                    db.SW_SiteMapNodeDatas.DeleteAllOnSubmit(deleteSiteMapNodesData);
+
+                    // Delete all SiteMapNodes
+                    db.SW_SiteMapNodes.DeleteAllOnSubmit(deleteSiteMapNodes);
+
+                    db.SubmitChanges();
+
+                }
+
+            }
+
+        } 
+        #endregion
+
+
+        /// <summary>
+        /// Update a path in SiteMapNode
+        /// (Insert RoleIds with AddRoleId and Remove RoleIds with RemoveRoleId)
+        /// </summary>
+        /// <param name="siteMapNodeId">Insert SiteMapId</param>
+        /// <param name="path">Insert URL (Ex. ~/default.aspx)</param>
+        /// <param name="userId">Insert UserId</param>
+        /// <param name="showSiteMapNode">Show URL in menu or not? (true)Show - (false)Dont show in menu</param>
+        /// <param name="siteMapNodeSubId">If you want this URL like a sub for a URL, then insert ID of the URL</param>
+        /// <param name="title">Inser title of URL</param>
+        /// <param name="langaugeId">Insert ID of that langauge it write in</param>
+        /// <param name="newLangId">Insert newLangId</param>
+        protected void UpdateSiteMap(int siteMapNodeId,
+            int langaugeId,
+            string path,
+            Guid userId,
+            bool showSiteMapNode,
+            int? siteMapNodeSubId,
+            string title,
+            int? newLangId)
+        {
+            DateTime dateTimeNow = TimeZoneManager.DateTimeNow;
+
+            // using statement free the memory after metode is done
+            using (Searchwar_netEntities db = new Searchwar_netEntities())
+            {
+                SW_SiteMapNode siteMapNode = (from s in db.SW_SiteMapNodes
+                                              where s.SiteMapNodeId.Equals(siteMapNodeId)
+                                              select s).SingleOrDefault();
+
+                // Check SiteMapId in database
+                if (siteMapNode != null)
+                {
+
+                    siteMapNode.SiteMapNodePath = path;
+                    siteMapNode.SiteMapNodeShow = showSiteMapNode;
+                    siteMapNode.SiteMapNodeSubId = siteMapNodeSubId;
+                    siteMapNode.SiteMapNodeEditUserId = userId;
+                    siteMapNode.SiteMapNodeEditDate = dateTimeNow;
+
+                    SW_SiteMapNodeData siteMapNodeData = siteMapNode.SW_SiteMapNodeDatas.Single<SW_SiteMapNodeData>(d => d.SiteMapNodeId.Equals(siteMapNodeId) && d.LangId.Equals(langaugeId));
+                    siteMapNodeData.SiteMapNodeTitle = title;
+                    if (newLangId.HasValue)
+                    {
+                        siteMapNodeData.LangId = newLangId.Value;
+                    }
+
+                    db.SubmitChanges();
+
+                }
+                else
+                {
+
+                    throw (new ArgumentNullException("siteMapNodeId", "Cant find SiteMap '" + siteMapNodeId + "' in database"));
+
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Insert a path in SiteMapNode (Insert RoleIds with AddRoleId)
+        /// </summary>
+        /// <param name="path">Insert URL (Ex. ~/default.aspx)</param>
+        /// <param name="userId">Insert UserId</param>
+        /// <param name="showSiteMapNode">Show URL in menu or not? (true)Show - (false)Dont show in menu</param>
+        /// <param name="siteMapNodeSubId">If you want this URL like a sub for a URL, then insert ID of the URL</param>
+        /// <param name="title">Inser title of URL</param>
+        /// <param name="langaugeId">Insert ID of that langauge it write in</param>
+        protected void CreateSiteMapNode(string path,
+            Guid userId,
+            bool showSiteMapNode,
+            int? siteMapNodeSubId,
+            string title, 
+            int langaugeId)
+        {
+            DateTime dateTimeNow = TimeZoneManager.DateTimeNow;
+
+            // using statement free the memory after metode is done
+            using (Searchwar_netEntities db = new Searchwar_netEntities())
+            {
+
+                SW_SiteMapNode createSiteMapNode = new SW_SiteMapNode
+                                                       {
+                                                           SiteMapNodePath = path,
+                                                           SiteMapNodeAddedUserId = userId,
+                                                           SiteMapNodeEditUserId = userId,
+                                                           SiteMapNodeShow = showSiteMapNode,
+                                                           SiteMapNodeEditDate = dateTimeNow,
+                                                           SiteMapNodeAddedDate = dateTimeNow
+                                                       };
+
+                SW_SiteMapNodeData createSiteMapNodeData = new SW_SiteMapNodeData
+                                                               {
+                                                                   LangId = langaugeId
+                                                               };
+
+
+                // Check title for empty
+                if (!string.IsNullOrEmpty(title))
+                {
+                    createSiteMapNodeData.SiteMapNodeTitle = title;
+                }
+
+
+                // Check SubId for empty
+                if (siteMapNodeSubId.HasValue)
+                {
+                    SW_SiteMapNode siteMapNodeSub = (from s in db.SW_SiteMapNodes
+                                                     where s.SiteMapNodeId.Equals(siteMapNodeSubId)
+                                                     select s).SingleOrDefault();
+
+                    // Check path is in database
+                    if (siteMapNodeSub != null)
+                    {
+
+                        createSiteMapNode.SiteMapNodeSubId = siteMapNodeSubId;
+
+                    }
+                    else
+                    {
+
+                        throw (new ArgumentNullException("siteMapNodeSubId", "Cant find SiteMapId '" + siteMapNodeSubId + "' in database"));
+
+                    }
+                }
+
+                db.SW_SiteMapNodes.InsertOnSubmit(createSiteMapNode);
+                db.SubmitChanges();
+
+                // Insert SiteMapId
+                createSiteMapNodeData.SiteMapNodeId = createSiteMapNode.SiteMapNodeId;
+
+                db.SW_SiteMapNodeDatas.InsertOnSubmit(createSiteMapNodeData);
+                db.SubmitChanges();
+            }
+
+
+        }
+    }
+}

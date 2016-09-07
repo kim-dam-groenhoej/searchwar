@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 23, 35.75" name="SearchWarDataClasses">
+  <DataContextMoniker Name="/Searchwar_netEntities" />
+  <nestedChildShapes>
+    <classShape Id="ffb8303a-a1ee-46aa-a0b9-d5fc47f115fe" absoluteBounds="0.75, 22.375, 2, 1.4248478190104201">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_Application" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98856374-c301-4787-9893-9463d7478362" absoluteBounds="0.765, 22.835, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4eeabb85-e49f-414f-9394-e96f3b2d7c1e" absoluteBounds="9, 24.75, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SiteMapNodeRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28d2ee0c-b0c3-4f90-ac8c-8124328160ea" absoluteBounds="9.015, 25.21, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e319929f-d98a-4325-a84b-71e9664181b0" absoluteBounds="12.25, 15.25, 2, 4.2187524414062523">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_Membership" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93195083-85a1-4ad2-b09d-c93869f2492d" absoluteBounds="12.265, 15.71, 1.9700000000000002, 3.65875244140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="66c6cb71-ac4e-435c-88cc-28c8a4baed0e" absoluteBounds="3.5, 13.75, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_Path" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b08316a-c43b-4abc-939c-09ae87d8445a" absoluteBounds="3.515, 14.21, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6a06202-5708-48df-837d-6ea305e11a92" absoluteBounds="6.25, 13.875, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_PersonalizationAllUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eba4b394-12bc-4dea-892b-abac57480df3" absoluteBounds="6.265, 14.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e9dd1ac3-d2eb-4bf5-a983-f949654185ca" absoluteBounds="9.25, 19.25, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_PersonalizationPerUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1358ce87-6872-493a-bdf6-d579435a40c5" absoluteBounds="9.265, 19.71, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0fcd403-d173-4db9-9ce9-c1f925c22806" absoluteBounds="6.25, 18.25, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_Profile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8328b89b-1040-4a39-8878-824fb2aabc1f" absoluteBounds="6.265, 18.71, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf14c9c6-42cf-403f-87fb-37535d98d0ec" absoluteBounds="3.5, 15.875, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db187ac7-ec06-4366-b6f5-917321d2c45b" absoluteBounds="3.515, 16.335, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d13fbc3d-72ee-4047-bc28-ab852d6d83cd" absoluteBounds="3.75, 4.75, 2, 1.2605004882812496">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_SchemaVersion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="449a883a-3aec-4b9c-b1f1-c6fbe526b361" absoluteBounds="3.765, 5.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54ba904b-4b03-4109-8110-ed82fa5d7751" absoluteBounds="3.5, 24.375, 2, 1.9178898111979201">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cd5ddc0-1462-4a5c-be2d-65bbf90a8da9" absoluteBounds="3.515, 24.835, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31ec4891-fb06-4bac-9528-c73c30341660" absoluteBounds="9.25, 21.5, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_UsersInRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2502161f-553c-4edc-9451-8f0e40be4161" absoluteBounds="9.265, 21.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0be92358-b5fa-449e-ae45-b5f24e668bcb" absoluteBounds="6.75, 0.75, 2, 3.23266845703125">
+      <DataClassMoniker Name="/Searchwar_netEntities/aspnet_WebEvent_Event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4501c8f2-6fb0-41bb-baac-dca55b036f04" absoluteBounds="6.765, 1.21, 1.9700000000000002, 2.67266845703125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96e08285-1191-49f0-a714-3005e2e22cb2" absoluteBounds="3.5, 1, 2, 2.5752791341145831">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_Advertise" />
+      <nestedChildShapes>
+        <elementListCompartment Id="267455ce-c00c-4e94-9fe0-1eda3fc0a9f3" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16acc420-446f-4fc2-b0f1-c96d643aec50" absoluteBounds="0.75, 5.25, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_AdvertiseCompany" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b6cbcb0-911a-4ed6-a07d-0eaf101da45e" absoluteBounds="0.765, 5.71, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb42b303-ff19-4b21-8ca0-43b827b62188" absoluteBounds="0.75, 1.375, 2, 1.75354248046875">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_AdvertisePlace" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f89b1513-6460-4062-8fa7-e63e8a0d5ff5" absoluteBounds="0.765, 1.835, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8f4407e-f5a2-4a64-9323-0f0f07ff4697" absoluteBounds="6.75, 4.75, 2, 1.0961531575520827">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_Banlist" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cdcf4488-c1cc-4179-b20d-ccb3f4116200" absoluteBounds="6.765, 5.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d96285b5-6451-4ed3-9792-d2e0e2c2efc1" absoluteBounds="6.25, 20.625, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_Faq" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1693bcb-357d-4699-862c-40f3f969a5d4" absoluteBounds="6.265, 21.085, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5851d272-5cc3-4861-a766-76412050cb12" absoluteBounds="12, 20.625, 2, 1.4248478190104201">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_FaqData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2eb54a1f-1356-4558-a245-029b96d3e580" absoluteBounds="12.015, 21.085, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a002a7a8-eee5-40dc-a48e-1f84696f6702" absoluteBounds="12, 23.125, 2, 1.2605004882812523">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarContinentData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="724a6926-5118-4aa7-8a77-e297539bdc13" absoluteBounds="12.015, 23.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5284e03a-4317-4408-ba4a-dc52cf59f2db" absoluteBounds="12, 25.75, 2, 1.7535424804687523">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarCountry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69710b83-1055-4744-88b0-bcccf0942726" absoluteBounds="12.015, 26.21, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e0cc3043-dac4-484e-8e6e-b1b7daa27b53" absoluteBounds="17.75, 27.875, 2, 1.4248478190104201">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarCountryData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7e3e495-48d1-47c8-9079-21f63039ed34" absoluteBounds="17.765, 28.335, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2cb0f681-5d2a-4be6-89f0-359105e1d758" absoluteBounds="6.25, 25.25, 2, 1.7535424804687523">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarGame" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf665404-8d25-449a-887b-c53780befc99" absoluteBounds="6.265, 25.71, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a56be78b-95b9-4a4a-9e5e-7d5b9e2d1c9b" absoluteBounds="9, 27.75, 2, 1.9178898111979201">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarGameType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60e60927-60ec-4b4d-b36c-1cb17e183368" absoluteBounds="9.015, 28.21, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d54d991-53e5-4a0a-b1d8-93b40cbc388a" absoluteBounds="17.5, 25.5, 2, 1.4248478190104201">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarPlayer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="836dce1f-2960-43c6-a56b-1c0a53bfca85" absoluteBounds="17.515, 25.96, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="745fb2ba-ae34-4654-9e21-bd571749991a" absoluteBounds="6.25, 27.75, 2, 1.7535424804687523">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarSkill" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2bf01690-055b-437f-bc16-ec7d808ea5d9" absoluteBounds="6.265, 28.21, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="499fcf72-25d3-4bc6-854f-23e0a0fa7040" absoluteBounds="12, 29, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SiteMapNodeMetaTag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cfe52457-6e41-40ce-9c4a-30612f135dfe" absoluteBounds="12.015, 29.46, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff05fea2-0801-4d8f-8d59-bd53eade5a60" absoluteBounds="14.75, 29.375, 2, 2.9039737955729166">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SiteMapNodeMetaTagsData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d638d13d-c10b-4e0d-b19f-d509957bf324" absoluteBounds="14.765, 29.835, 1.9700000000000002, 2.3439737955729165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 22.375); (1.75 : 15.53125); (2.19791916666667 : 15.53125 : JumpStart); (2.36458583333333 : 15.53125 : JumpEnd); (9.51041666666667 : 15.53125 : JumpStart); (9.67708333333333 : 15.53125 : JumpEnd); (12.25 : 15.53125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_Application/aspnet_Application_aspnet_Membership" />
+      <nodes>
+        <classShapeMoniker Id="ffb8303a-a1ee-46aa-a0b9-d5fc47f115fe" />
+        <classShapeMoniker Id="e319929f-d98a-4325-a84b-71e9664181b0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 22.375); (2.2812525 : 14.4624239095052); (3.5 : 14.4624239095052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_Application/aspnet_Application_aspnet_Path" />
+      <nodes>
+        <classShapeMoniker Id="ffb8303a-a1ee-46aa-a0b9-d5fc47f115fe" />
+        <classShapeMoniker Id="66c6cb71-ac4e-435c-88cc-28c8a4baed0e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.5052502441406); (6.25 : 14.5052502441406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_Path/aspnet_Path_aspnet_PersonalizationAllUser" />
+      <nodes>
+        <classShapeMoniker Id="66c6cb71-ac4e-435c-88cc-28c8a4baed0e" />
+        <classShapeMoniker Id="b6a06202-5708-48df-837d-6ea305e11a92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 13.78125); (9.59375 : 13.78125); (9.59375 : 19.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_Path/aspnet_Path_aspnet_PersonalizationPerUser" />
+      <nodes>
+        <classShapeMoniker Id="66c6cb71-ac4e-435c-88cc-28c8a4baed0e" />
+        <classShapeMoniker Id="e9dd1ac3-d2eb-4bf5-a983-f949654185ca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 16.6695975748698); (9.09375 : 16.6695975748698); (9.09375 : 24.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_Role/aspnet_Role_SW_SiteMapNodeRole" />
+      <nodes>
+        <classShapeMoniker Id="bf14c9c6-42cf-403f-87fb-37535d98d0ec" />
+        <classShapeMoniker Id="4eeabb85-e49f-414f-9394-e96f3b2d7c1e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.2187475 : 22.375); (1.2187475 : 16.6695975748698); (2.19791916666667 : 16.6695975748698 : JumpStart); (2.36458583333333 : 16.6695975748698 : JumpEnd); (3.5 : 16.6695975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_Application/aspnet_Application_aspnet_Role" />
+      <nodes>
+        <classShapeMoniker Id="ffb8303a-a1ee-46aa-a0b9-d5fc47f115fe" />
+        <classShapeMoniker Id="bf14c9c6-42cf-403f-87fb-37535d98d0ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 24.5677502441406); (8.41666666666667 : 24.5677502441406 : JumpStart); (8.58333333333333 : 24.5677502441406 : JumpEnd); (9.01041666666667 : 24.5677502441406 : JumpStart); (9.17708333333333 : 24.5677502441406 : JumpEnd); (11.5416666666667 : 24.5677502441406 : JumpStart); (11.8958333333333 : 24.5677502441406 : JumpEnd); (14.15625 : 24.5677502441406); (14.15625 : 19.4687524414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_aspnet_Membership" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="e319929f-d98a-4325-a84b-71e9664181b0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 24.375); (4.5 : 20.2320975748698); (9.01041666666667 : 20.2320975748698 : JumpStart); (9.17708333333333 : 20.2320975748698 : JumpEnd); (9.25 : 20.2320975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_aspnet_PersonalizationPerUser" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="e9dd1ac3-d2eb-4bf5-a983-f949654185ca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 24.375); (5.0312525 : 19.0445975748698); (6.25 : 19.0445975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_aspnet_Profile" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="c0fcd403-d173-4db9-9ce9-c1f925c22806" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 23.0874239095052); (3.9687475 : 23.0874239095052); (3.9687475 : 24.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_Application/aspnet_Application_aspnet_User" />
+      <nodes>
+        <classShapeMoniker Id="ffb8303a-a1ee-46aa-a0b9-d5fc47f115fe" />
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 17.4641951497396); (4 : 22.4364241536458); (5.21354541666667 : 22.4364241536458 : JumpStart); (5.38021208333333 : 22.4364241536458 : JumpEnd); (9.01041666666667 : 22.4364241536458 : JumpStart); (9.17708333333333 : 22.4364241536458 : JumpEnd); (9.25 : 22.4364241536458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_Role/aspnet_Role_aspnet_UsersInRole" />
+      <nodes>
+        <classShapeMoniker Id="bf14c9c6-42cf-403f-87fb-37535d98d0ec" />
+        <classShapeMoniker Id="31ec4891-fb06-4bac-9528-c73c30341660" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.2187475 : 24.375); (4.2187475 : 22.5475411555989); (4.41666666666667 : 22.5475411555989 : JumpStart); (4.58333333333333 : 22.5475411555989 : JumpEnd); (4.94791916666667 : 22.5475411555989 : JumpStart); (5.11458583333333 : 22.5475411555989 : JumpEnd); (5.21354541666667 : 22.5475411555989 : JumpStart); (5.38021208333333 : 22.5475411555989 : JumpEnd); (9.01041666666667 : 22.5475411555989 : JumpStart); (9.17708333333333 : 22.5475411555989 : JumpEnd); (9.25 : 22.5475411555989)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_aspnet_UsersInRole" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="31ec4891-fb06-4bac-9528-c73c30341660" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.60135016848644); (3.59375 : 6.60135016848644); (3.59375 : 3.53855801632007)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_AdvertiseCompany/SW_AdvertiseCompany_SW_Advertise" />
+      <nodes>
+        <classShapeMoniker Id="16acc420-446f-4fc2-b0f1-c96d643aec50" />
+        <classShapeMoniker Id="96e08285-1191-49f0-a714-3005e2e22cb2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.25177124023438); (3.5 : 2.25177124023438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_AdvertisePlace/SW_AdvertisePlace_SW_Advertise" />
+      <nodes>
+        <classShapeMoniker Id="cb42b303-ff19-4b21-8ca0-43b827b62188" />
+        <classShapeMoniker Id="96e08285-1191-49f0-a714-3005e2e22cb2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.29687875 : 24.375); (5.29687875 : 21.4195975748698); (6.25 : 21.4195975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_Faq" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="d96285b5-6451-4ed3-9792-d2e0e2c2efc1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.76562625 : 24.375); (4.76562625 : 21.8481488623047); (4.94791916666667 : 21.8481488623047 : JumpStart); (5.11458583333333 : 21.8481488623047 : JumpEnd); (5.21354541666667 : 21.8481488623047 : JumpStart); (5.38021208333333 : 21.8481488623047 : JumpEnd); (6.25 : 21.8481488623047)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_Faq1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="d96285b5-6451-4ed3-9792-d2e0e2c2efc1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 21.1695975748698); (9.01041666666667 : 21.1695975748698 : JumpStart); (9.17708333333333 : 21.1695975748698 : JumpEnd); (11.4010384166667 : 21.1695975748698 : JumpStart); (11.8958333333333 : 21.1695975748698 : JumpEnd); (12 : 21.1695975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Faq/SW_Faq_SW_FaqData" />
+      <nodes>
+        <classShapeMoniker Id="d96285b5-6451-4ed3-9792-d2e0e2c2efc1" />
+        <classShapeMoniker Id="5851d272-5cc3-4861-a766-76412050cb12" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.9687475 : 26.2928898111979); (3.9687475 : 26.238294136869); (8.34909337414415 : 26.238294136869 : JumpStart); (8.58333333333333 : 26.238294136869 : JumpEnd); (8.60416666666667 : 26.238294136869 : JumpStart); (8.77083333333333 : 26.238294136869 : JumpEnd); (11.5416666666667 : 26.238294136869 : JumpStart); (11.8020818333333 : 26.238294136869 : JumpEnd); (12 : 26.238294136869)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarCountry" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="5284e03a-4317-4408-ba4a-dc52cf59f2db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.29687875 : 26.2928898111979); (5.29687875 : 26.6267712402344); (5.34635854166667 : 26.6267712402344 : JumpStart); (5.51302520833333 : 26.6267712402344 : JumpEnd); (8.41666666666667 : 26.6267712402344 : JumpStart); (8.77083333333333 : 26.6267712402344 : JumpEnd); (11.5416666666667 : 26.6267712402344 : JumpStart); (11.8020818333333 : 26.6267712402344 : JumpEnd); (12 : 26.6267712402344)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarCountry1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="5284e03a-4317-4408-ba4a-dc52cf59f2db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 27.3276188151042); (14.4282430013021 : 27.3276188151042 : JumpStart); (14.5949096679687 : 27.3276188151042 : JumpEnd); (17.5104166666667 : 27.3276188151042 : JumpStart); (17.6770833333333 : 27.3276188151042 : JumpEnd); (19.65625 : 27.3276188151042); (19.65625 : 27.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarCountry/SW_SearchWarCountry_SW_SearchWarCountryData" />
+      <nodes>
+        <classShapeMoniker Id="5284e03a-4317-4408-ba4a-dc52cf59f2db" />
+        <classShapeMoniker Id="e0cc3043-dac4-484e-8e6e-b1b7daa27b53" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 25.771444905599); (6.25 : 25.771444905599)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarGame" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="2cb0f681-5d2a-4be6-89f0-359105e1d758" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 25.4482224527995); (6.25 : 25.4482224527995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarGame1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="2cb0f681-5d2a-4be6-89f0-359105e1d758" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.76562625 : 26.2928898111979); (4.76562625 : 29.6169661458333); (4.81510604166667 : 29.6169661458333 : JumpStart); (5.24739895833333 : 29.6169661458333 : JumpEnd); (8.28009033203117 : 29.6169661458333 : JumpStart); (8.58333333333333 : 29.6169661458333 : JumpEnd); (8.60416666666667 : 29.6169661458333 : JumpStart); (8.77083333333333 : 29.6169661458333 : JumpEnd); (9 : 29.6169661458333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarGameType" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="a56be78b-95b9-4a4a-9e5e-7d5b9e2d1c9b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.23437375 : 26.2928898111979); (4.23437375 : 29.591504313151); (4.28385354166667 : 29.591504313151 : JumpStart); (4.71614645833333 : 29.591504313151 : JumpEnd); (4.81510604166667 : 29.591504313151 : JumpStart); (5.24739895833333 : 29.591504313151 : JumpEnd); (8.25462849934887 : 29.591504313151 : JumpStart); (8.58333333333333 : 29.591504313151 : JumpEnd); (8.60416666666667 : 29.591504313151 : JumpStart); (8.77083333333333 : 29.591504313151 : JumpEnd); (9 : 29.591504313151)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarGameType1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="a56be78b-95b9-4a4a-9e5e-7d5b9e2d1c9b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 25.8718331411508); (8.46286316076211 : 26.2994352555738 : JumpStart); (8.53713683923789 : 26.4486371270884 : JumpEnd); (8.65036316076211 : 26.6760875432091 : JumpStart); (8.72463683923789 : 26.8252894147236 : JumpEnd); (9.0625 : 27.5039930542368); (9.0625 : 28.6395001565755); (9 : 28.6395001565755)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarGame/SW_SearchWarGame_SW_SearchWarGameType" />
+      <nodes>
+        <classShapeMoniker Id="2cb0f681-5d2a-4be6-89f0-359105e1d758" />
+        <classShapeMoniker Id="a56be78b-95b9-4a4a-9e5e-7d5b9e2d1c9b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.70312125 : 26.2928898111979); (3.70312125 : 28.6267712402344); (4.15104041666667 : 28.6267712402344 : JumpStart); (5.24739895833333 : 28.6267712402344 : JumpEnd); (6.25 : 28.6267712402344)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarSkill" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="745fb2ba-ae34-4654-9e21-bd571749991a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.429691875 : 26.2928898111979); (5.429691875 : 28.1571331201172); (6.25 : 28.1571331201172)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarSkill1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="745fb2ba-ae34-4654-9e21-bd571749991a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 26.2928898111979); (4.5 : 30.083944905599); (4.54947979166667 : 30.083944905599 : JumpStart); (4.71614645833333 : 30.083944905599 : JumpEnd); (4.81510604166667 : 30.083944905599 : JumpStart); (4.98177270833333 : 30.083944905599 : JumpEnd); (5.08073229166667 : 30.083944905599 : JumpStart); (5.24739895833333 : 30.083944905599 : JumpEnd); (7.16666666666667 : 30.083944905599 : JumpStart); (7.33333333333333 : 30.083944905599 : JumpEnd); (8.54166666666667 : 30.083944905599 : JumpStart); (8.77083333333333 : 30.083944905599 : JumpEnd); (8.77674542608177 : 30.083944905599 : JumpStart); (8.94341209274844 : 30.083944905599 : JumpEnd); (11.6354151666667 : 30.083944905599 : JumpStart); (11.8020818333333 : 30.083944905599 : JumpEnd); (12 : 30.083944905599)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SiteMapNodeMetaTag" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="499fcf72-25d3-4bc6-854f-23e0a0fa7040" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 26.2928898111979); (5.0312525 : 29.8759148583984); (5.08073229166667 : 29.8759148583984 : JumpStart); (5.24739895833333 : 29.8759148583984 : JumpEnd); (7.16666666666667 : 29.8759148583984 : JumpStart); (7.33333333333333 : 29.8759148583984 : JumpEnd); (8.54173780225858 : 29.8759148583984 : JumpStart); (8.77083333333333 : 29.8759148583984 : JumpEnd); (11.6354151666667 : 29.8759148583984 : JumpStart); (11.8020818333333 : 29.8759148583984 : JumpEnd); (12 : 29.8759148583984)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SiteMapNodeMetaTag1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="499fcf72-25d3-4bc6-854f-23e0a0fa7040" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 29.9820975748698); (14.2916666666667 : 29.9820975748698 : JumpStart); (14.4583333333333 : 29.9820975748698 : JumpEnd); (14.75 : 29.9820975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SiteMapNodeMetaTag/SW_SiteMapNodeMetaTag_SW_SiteMapNodeMetaTagsData" />
+      <nodes>
+        <classShapeMoniker Id="499fcf72-25d3-4bc6-854f-23e0a0fa7040" />
+        <classShapeMoniker Id="ff05fea2-0801-4d8f-8d59-bd53eade5a60" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="18ca79a2-5003-4834-97b4-2dc74b3487a1" absoluteBounds="6.25, 30.5, 2, 1.5891951497395809">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_Blog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf10d785-76d3-40e8-bf2d-cf2e5f8b83c4" absoluteBounds="6.265, 30.96, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="094c06f4-895d-489e-a627-1448cbd58d9d" absoluteBounds="15, 21.75, 2, 1.4248478190104201">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_BlogData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3e5983a-4fcc-44f3-9ee0-881d6c5bf2bb" absoluteBounds="15.015, 22.21, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.632813125 : 26.2928898111979); (4.632813125 : 31.2945975748698); (4.81510604166667 : 31.2945975748698 : JumpStart); (4.98177270833333 : 31.2945975748698 : JumpEnd); (5.08073229166667 : 31.2945975748698 : JumpStart); (5.24739895833333 : 31.2945975748698 : JumpEnd); (6.25 : 31.2945975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_Blog" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="18ca79a2-5003-4834-97b4-2dc74b3487a1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.367186875 : 26.2928898111979); (4.367186875 : 30.8660462874349); (4.54947979166667 : 30.8660462874349 : JumpStart); (4.71614645833333 : 30.8660462874349 : JumpEnd); (4.81510604166667 : 30.8660462874349 : JumpStart); (4.98177270833333 : 30.8660462874349 : JumpEnd); (5.08073229166667 : 30.8660462874349 : JumpStart); (5.24739895833333 : 30.8660462874349 : JumpEnd); (6.25 : 30.8660462874349)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_Blog1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="18ca79a2-5003-4834-97b4-2dc74b3487a1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 30.5); (7.25 : 29.7535424804688); (8.5 : 29.7535424804688); (8.5 : 22.8461531575521); (9.01041666666667 : 22.8461531575521 : JumpStart); (9.17708333333333 : 22.8461531575521 : JumpEnd); (11.4010384166667 : 22.8461531575521 : JumpStart); (11.8958333333333 : 22.8461531575521 : JumpEnd); (14.0729166666667 : 22.8461531575521 : JumpStart); (14.2395833333333 : 22.8461531575521 : JumpEnd); (14.625 : 22.8461531575521); (14.625 : 22.4624239095052); (15 : 22.4624239095052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Blog/SW_Blog_SW_BlogData" />
+      <nodes>
+        <classShapeMoniker Id="18ca79a2-5003-4834-97b4-2dc74b3487a1" />
+        <classShapeMoniker Id="094c06f4-895d-489e-a627-1448cbd58d9d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="993402b0-234f-4637-9970-0511ff47a521" absoluteBounds="10, 17, 2, 1.2605004882812523">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_Lang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e13b85c-d3df-49ea-a0ee-c9e0f68abb4a" absoluteBounds="10.015, 17.46, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.89062575 : 18.2605004882813); (11.89062575 : 21.0043938623047); (12 : 21.0043938623047)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Lang/SW_Lang_SW_FaqData" />
+      <nodes>
+        <classShapeMoniker Id="993402b0-234f-4637-9970-0511ff47a521" />
+        <classShapeMoniker Id="5851d272-5cc3-4861-a766-76412050cb12" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.48437175 : 18.2605004882813); (11.48437175 : 23.7552502441406); (11.5416666666667 : 23.7552502441406 : JumpStart); (11.8958333333333 : 23.7552502441406 : JumpEnd); (12 : 23.7552502441406)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Lang/SW_Lang_SW_SearchWarContinentData" />
+      <nodes>
+        <classShapeMoniker Id="993402b0-234f-4637-9970-0511ff47a521" />
+        <classShapeMoniker Id="a002a7a8-eee5-40dc-a48e-1f84696f6702" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.0976528125 : 18.2605004882813); (11.0976528125 : 18.75); (11.4010384166667 : 18.75 : JumpStart); (11.5677050833333 : 18.75 : JumpEnd); (11.625 : 18.75); (11.625 : 28.2812505); (11.6354151666667 : 28.2812505 : JumpStart); (11.8020818333333 : 28.2812505 : JumpEnd); (14.2916666666667 : 28.2812505 : JumpStart); (14.4583333333333 : 28.2812505 : JumpEnd); (16.9479166666667 : 28.2812505 : JumpStart); (17.4270833333333 : 28.2812505 : JumpEnd); (17.5104166666667 : 28.2812505 : JumpStart); (17.6770833333333 : 28.2812505 : JumpEnd); (17.75 : 28.2812505)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Lang/SW_Lang_SW_SearchWarCountryData" />
+      <nodes>
+        <classShapeMoniker Id="993402b0-234f-4637-9970-0511ff47a521" />
+        <classShapeMoniker Id="e0cc3043-dac4-484e-8e6e-b1b7daa27b53" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.7187485 : 18.2605004882813); (11.7187485 : 30.7945975748698); (12.9166666666667 : 30.7945975748698 : JumpStart); (13.0833333333333 : 30.7945975748698 : JumpEnd); (14.2916666666667 : 30.7945975748698 : JumpStart); (14.4583333333333 : 30.7945975748698 : JumpEnd); (14.75 : 30.7945975748698)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Lang/SW_Lang_SW_SiteMapNodeMetaTagsData" />
+      <nodes>
+        <classShapeMoniker Id="993402b0-234f-4637-9970-0511ff47a521" />
+        <classShapeMoniker Id="ff05fea2-0801-4d8f-8d59-bd53eade5a60" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.7187485 : 18.2605004882813); (11.7187485 : 22.954326578776); (11.7291666666667 : 22.954326578776 : JumpStart); (11.8958333333333 : 22.954326578776 : JumpEnd); (14.0729166666667 : 22.954326578776 : JumpStart); (14.2395833333333 : 22.954326578776 : JumpEnd); (15 : 22.954326578776)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Lang/SW_Lang_SW_BlogData" />
+      <nodes>
+        <classShapeMoniker Id="993402b0-234f-4637-9970-0511ff47a521" />
+        <classShapeMoniker Id="094c06f4-895d-489e-a627-1448cbd58d9d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="43b54a56-05ef-4212-8f03-ef3736f44924" absoluteBounds="9.5, 31, 2, 1.2605004882812523">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarSkillData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f67d3d5-4b71-4384-bf9e-a39528fd74f0" absoluteBounds="9.515, 31.46, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.7187485 : 18.2605004882813); (11.7187485 : 31.6302502441406); (11.5 : 31.6302502441406)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Lang/SW_Lang_SW_SearchWarSkillData" />
+      <nodes>
+        <classShapeMoniker Id="993402b0-234f-4637-9970-0511ff47a521" />
+        <classShapeMoniker Id="43b54a56-05ef-4212-8f03-ef3736f44924" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 29.5035424804688); (8.625 : 29.8785424804688); (8.625 : 31.6302502441406); (8.69791666666667 : 31.6302502441406 : JumpStart); (8.86458333333333 : 31.6302502441406 : JumpEnd); (8.94791666666667 : 31.6302502441406 : JumpStart); (9.11458333333333 : 31.6302502441406 : JumpEnd); (9.5 : 31.6302502441406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarSkill/SW_SearchWarSkill_SW_SearchWarSkillData" />
+      <nodes>
+        <classShapeMoniker Id="745fb2ba-ae34-4654-9e21-bd571749991a" />
+        <classShapeMoniker Id="43b54a56-05ef-4212-8f03-ef3736f44924" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5aa78676-d2f9-477f-86f6-25b36bf62b93" absoluteBounds="3.375, 11.125, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_ChatPerson" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fbc7237-0511-4e31-9bad-f956aae4722c" absoluteBounds="3.39, 11.585, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c72ef4f-91c9-4160-92d4-d3ce131da9f5" absoluteBounds="3.375, 8.125, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_chat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b17d347b-dd46-4686-92d7-f5603118c4c1" absoluteBounds="3.39, 8.585, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c125247f-c693-4778-a778-a58f4af58d72" absoluteBounds="6.125, 11.125, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_ChatMessage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b724048-0f6d-40eb-b63e-29326c7e7931" absoluteBounds="6.14, 11.585, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a3cb0423-3333-45f5-9f43-bccf4243ff94" absoluteBounds="6.125, 8.125, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_ChatBlinking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4fa5ee82-1339-43ba-a75b-8b22939dc8d8" absoluteBounds="6.14, 8.585, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 9.532605919083); (5.75 : 9.907605919083); (5.75 : 11.9100500842432); (6.125 : 11.9100500842432)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_chat/SW_chat_SW_ChatMessage" />
+      <nodes>
+        <classShapeMoniker Id="7c72ef4f-91c9-4160-92d4-d3ce131da9f5" />
+        <classShapeMoniker Id="c125247f-c693-4778-a778-a58f4af58d72" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 11.4550250421216); (5.66666666666667 : 11.4550250421216 : JumpStart); (5.83333333333333 : 11.4550250421216 : JumpEnd); (6.125 : 11.4550250421216)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_ChatPerson/SW_ChatPerson_SW_ChatMessage" />
+      <nodes>
+        <classShapeMoniker Id="5aa78676-d2f9-477f-86f6-25b36bf62b93" />
+        <classShapeMoniker Id="c125247f-c693-4778-a778-a58f4af58d72" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 8.7975504595415); (6.125 : 8.7975504595415)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_chat/SW_chat_SW_ChatBlinking" />
+      <nodes>
+        <classShapeMoniker Id="7c72ef4f-91c9-4160-92d4-d3ce131da9f5" />
+        <classShapeMoniker Id="a3cb0423-3333-45f5-9f43-bccf4243ff94" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 11.1867646615764); (5.9375 : 10.6242646615764); (5.9375 : 9.19687249336117); (6.125 : 9.19687249336117)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_ChatPerson/SW_ChatPerson_SW_ChatBlinking" />
+      <nodes>
+        <classShapeMoniker Id="5aa78676-d2f9-477f-86f6-25b36bf62b93" />
+        <classShapeMoniker Id="a3cb0423-3333-45f5-9f43-bccf4243ff94" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9f846924-30f7-4b3f-aaad-51ece2fce62f" absoluteBounds="12.125, 0.875, 2, 1.2605004882812503">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_ServerContinent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7344e8d7-8a89-4322-9f28-4066c0e1b4ab" absoluteBounds="12.14, 1.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d8dc209c-2423-4111-88b2-1fdde856a61c" absoluteBounds="9.375, 1, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_Server" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb2f9013-92a5-4db3-8a57-e9621f103e22" absoluteBounds="9.39, 1.46, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a94914f2-9b60-420b-ac61-7685446a8153" absoluteBounds="15.75, 19.5, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarCountryData1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="154c15ed-49a7-4a27-ab26-4b5dfc96d9fb" absoluteBounds="15.765, 19.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.375 : 1.54807657877604); (12.125 : 1.54807657877604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Server/SW_Server_SW_ServerContinent" />
+      <nodes>
+        <classShapeMoniker Id="d8dc209c-2423-4111-88b2-1fdde856a61c" />
+        <classShapeMoniker Id="9f846924-30f7-4b3f-aaad-51ece2fce62f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.710933875 : 18.2605004882813); (10.710933875 : 19); (11.5625 : 19); (11.5625 : 20.0468762207031); (11.6354151666667 : 20.0468762207031 : JumpStart); (11.9739590833333 : 20.0468762207031 : JumpEnd); (14.0729166666667 : 20.0468762207031 : JumpStart); (14.2395833333333 : 20.0468762207031 : JumpEnd); (15.75 : 20.0468762207031)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Lang/SW_Lang_SW_SearchWarCountryData1" />
+      <nodes>
+        <classShapeMoniker Id="993402b0-234f-4637-9970-0511ff47a521" />
+        <classShapeMoniker Id="a94914f2-9b60-420b-ac61-7685446a8153" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 27.2084044824219); (14.5474573339844 : 27.2084044824219 : JumpStart); (14.714124000651 : 27.2084044824219 : JumpEnd); (17.25 : 27.2084044824219); (17.25 : 20.9248478190104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarCountry/SW_SearchWarCountry_SW_SearchWarCountryData1" />
+      <nodes>
+        <classShapeMoniker Id="5284e03a-4317-4408-ba4a-dc52cf59f2db" />
+        <classShapeMoniker Id="a94914f2-9b60-420b-ac61-7685446a8153" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="17a89732-087d-4431-b389-b5614aa7efce" absoluteBounds="20.75, 16.25, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWarContinent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49aeab57-173f-411f-a51d-8c858d041e85" absoluteBounds="20.765, 16.71, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(21.75 : 17.8391951497396); (21.75 : 23.7749239095052); (21.4348939583333 : 23.7749239095052 : JumpStart); (21.2682272916667 : 23.7749239095052 : JumpEnd); (21.1028611458333 : 23.7749239095052 : JumpStart); (20.9361944791667 : 23.7749239095052 : JumpEnd); (17.3333333333333 : 23.7749239095052 : JumpStart); (17.1666666666667 : 23.7749239095052 : JumpEnd); (14.2395833333333 : 23.7749239095052 : JumpStart); (14.0729166666667 : 23.7749239095052 : JumpEnd); (14 : 23.7749239095052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarContinent/SW_SearchWarContinent_SW_SearchWarContinentData" />
+      <nodes>
+        <classShapeMoniker Id="17a89732-087d-4431-b389-b5614aa7efce" />
+        <classShapeMoniker Id="a002a7a8-eee5-40dc-a48e-1f84696f6702" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.0195278125 : 17.8391951497396); (21.0195278125 : 27.4468331477865); (19.7395833333333 : 27.4468331477865 : JumpStart); (19.5729166666667 : 27.4468331477865 : JumpEnd); (17.6770833333333 : 27.4468331477865 : JumpStart); (17.5104166666667 : 27.4468331477865 : JumpEnd); (14 : 27.4468331477865)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarContinent/SW_SearchWarContinent_SW_SearchWarCountry" />
+      <nodes>
+        <classShapeMoniker Id="17a89732-087d-4431-b389-b5614aa7efce" />
+        <classShapeMoniker Id="5284e03a-4317-4408-ba4a-dc52cf59f2db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.75 : 16.25); (21.75 : 1.50525024414063); (14.125 : 1.50525024414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarContinent/SW_SearchWarContinent_SW_ServerContinent" />
+      <nodes>
+        <classShapeMoniker Id="17a89732-087d-4431-b389-b5614aa7efce" />
+        <classShapeMoniker Id="9f846924-30f7-4b3f-aaad-51ece2fce62f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 24.5364977441406); (8.41666666666667 : 24.5364977441406 : JumpStart); (8.58333333333333 : 24.5364977441406 : JumpEnd); (9.01041666666667 : 24.5364977441406 : JumpStart); (9.17708333333333 : 24.5364977441406 : JumpEnd); (11.5416666666667 : 24.5364977441406 : JumpStart); (11.8958333333333 : 24.5364977441406 : JumpEnd); (17.1666666666667 : 24.5364977441406 : JumpStart); (17.3333333333333 : 24.5364977441406 : JumpEnd); (20.9361944791667 : 24.5364977441406 : JumpStart); (21.1028611458333 : 24.5364977441406 : JumpEnd); (21.351560625 : 24.5364977441406); (21.351560625 : 17.8391951497396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarContinent" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="17a89732-087d-4431-b389-b5614aa7efce" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 24.5052452441406); (8.41666666666667 : 24.5052452441406 : JumpStart); (8.58333333333333 : 24.5052452441406 : JumpEnd); (9.01041666666667 : 24.5052452441406 : JumpStart); (9.17708333333333 : 24.5052452441406 : JumpEnd); (11.5416666666667 : 24.5052452441406 : JumpStart); (11.8958333333333 : 24.5052452441406 : JumpEnd); (17.1666666666667 : 24.5052452441406 : JumpStart); (17.3333333333333 : 24.5052452441406 : JumpEnd); (20.9361944791667 : 24.5052452441406 : JumpStart); (21.1028611458333 : 24.5052452441406 : JumpEnd); (21.9322926666667 : 24.5052452441406 : JumpStart); (22.0989593333333 : 24.5052452441406 : JumpEnd); (22.28125225 : 24.5052452441406); (22.28125225 : 17.8391951497396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SearchWarContinent1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="17a89732-087d-4431-b389-b5614aa7efce" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" absoluteBounds="17.125, 28.75, 2, 4.0544051106770826">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SearchWar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4dd3ac1e-606c-48ff-bb92-bcf438d6bf8a" absoluteBounds="17.14, 29.21, 1.9700000000000002, 3.494405110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(17.59375 : 28.75); (17.59375 : 26.9248478190104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWar/SW_SearchWar_SW_SearchWarPlayer" />
+      <nodes>
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+        <classShapeMoniker Id="5d54d991-53e5-4a0a-b1d8-93b40cbc388a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.5468785 : 17.8391951497396); (22.5468785 : 31.0833764648438); (19.125 : 31.0833764648438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarContinent/SW_SearchWarContinent_SW_SearchWar" />
+      <nodes>
+        <classShapeMoniker Id="17a89732-087d-4431-b389-b5614aa7efce" />
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.015626 : 17.8391951497396); (22.015626 : 30.1916096419271); (19.125 : 30.1916096419271)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarContinent/SW_SearchWarContinent_SW_SearchWar1" />
+      <nodes>
+        <classShapeMoniker Id="17a89732-087d-4431-b389-b5614aa7efce" />
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 27.4751878141276); (17.34375 : 27.4751878141276); (17.34375 : 28.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarCountry/SW_SearchWarCountry_SW_SearchWar" />
+      <nodes>
+        <classShapeMoniker Id="5284e03a-4317-4408-ba4a-dc52cf59f2db" />
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 27.4184784814453); (17.1875 : 27.4184784814453); (17.1875 : 28.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarCountry/SW_SearchWarCountry_SW_SearchWar1" />
+      <nodes>
+        <classShapeMoniker Id="5284e03a-4317-4408-ba4a-dc52cf59f2db" />
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 27.0035424804688); (7.25 : 27.6875); (8.41666666666667 : 27.6875 : JumpStart); (8.58333333333333 : 27.6875 : JumpEnd); (8.60416666666667 : 27.6875 : JumpStart); (8.77083333333333 : 27.6875 : JumpEnd); (8.97916666666667 : 27.6875 : JumpStart); (9.14583333333333 : 27.6875 : JumpEnd); (11.5416666666667 : 27.6875 : JumpStart); (11.8020818333333 : 27.6875 : JumpEnd); (14.2916666666667 : 27.6875 : JumpStart); (14.4583333333333 : 27.6875 : JumpEnd); (17.03125 : 27.6875); (17.03125 : 30.8079237091847); (17.125 : 30.8079237091847)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarGame/SW_SearchWarGame_SW_SearchWar" />
+      <nodes>
+        <classShapeMoniker Id="2cb0f681-5d2a-4be6-89f0-359105e1d758" />
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 28.84375); (11.6354151666667 : 28.84375 : JumpStart); (11.8020818333333 : 28.84375 : JumpEnd); (14.2916666666667 : 28.84375 : JumpStart); (14.4583333333333 : 28.84375 : JumpEnd); (16.9479166666667 : 28.84375 : JumpStart); (17.1145833333333 : 28.84375 : JumpEnd); (17.125 : 28.84375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarGameType/SW_SearchWarGameType_SW_SearchWar" />
+      <nodes>
+        <classShapeMoniker Id="a56be78b-95b9-4a4a-9e5e-7d5b9e2d1c9b" />
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 29.4738661461839); (8.62857443490112 : 29.852440581085 : JumpStart); (8.74642556509888 : 29.9702917112828 : JumpEnd); (9.03125 : 30.2551161461839); (9.03125 : 32.8044051106771); (12.9166666666667 : 32.8044051106771 : JumpStart); (13.0833333333333 : 32.8044051106771 : JumpEnd); (14.2916666666667 : 32.8044051106771 : JumpStart); (14.4583333333333 : 32.8044051106771 : JumpEnd); (17.0926923076923 : 32.8044051106771); (17.125 : 32.7720974183694)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarSkill/SW_SearchWarSkill_SW_SearchWar" />
+      <nodes>
+        <classShapeMoniker Id="745fb2ba-ae34-4654-9e21-bd571749991a" />
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 29.5008437228065); (8.62857443490112 : 29.8794181577076 : JumpStart); (8.74642556509888 : 29.9972692879054 : JumpEnd); (8.78125 : 30.0320937228065); (8.78125 : 33.1794051106771); (12.9166666666667 : 33.1794051106771 : JumpStart); (13.0833333333333 : 33.1794051106771 : JumpEnd); (16.7838451538462 : 33.1794051106771); (17.1588451538462 : 32.8044051106771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SearchWarSkill/SW_SearchWarSkill_SW_SearchWar1" />
+      <nodes>
+        <classShapeMoniker Id="745fb2ba-ae34-4654-9e21-bd571749991a" />
+        <classShapeMoniker Id="ea4cb2d3-0c6d-401e-92c8-5efa030607da" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="26659bd8-55bc-44fb-8c0a-6aeb5ae73871" absoluteBounds="14.75, 25.5, 2, 1.5891951497395809">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SiteMapNodeData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23077c8f-9a08-445d-9b2f-207d5cece955" absoluteBounds="14.765, 25.96, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a639bb16-1626-46fb-8d02-e7679c8e103f" absoluteBounds="6.25, 33.125, 2, 2.4109318033854237">
+      <DataClassMoniker Name="/Searchwar_netEntities/SW_SiteMapNode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9c20193-a346-400a-afbb-b7d12807f57d" absoluteBounds="6.265, 33.585, 1.9700000000000002, 1.8509318033854165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.3242149375 : 18.2605004882813); (10.3242149375 : 19.125); (11.4010384166667 : 19.125 : JumpStart); (11.8020818333333 : 19.125 : JumpEnd); (11.8125 : 19.125); (11.8125 : 25.5); (14.375 : 25.5); (14.375 : 26.2945975748698); (14.75 : 26.2945975748698)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_Lang/SW_Lang_SW_SiteMapNodeData" />
+      <nodes>
+        <classShapeMoniker Id="993402b0-234f-4637-9970-0511ff47a521" />
+        <classShapeMoniker Id="26659bd8-55bc-44fb-8c0a-6aeb5ae73871" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.21769230769231 : 33.125); (8.6875 : 32.6551923076923); (8.6875 : 25.4941475684345); (9 : 25.4941475684345)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SiteMapNode/SW_SiteMapNode_SW_SiteMapNodeRole" />
+      <nodes>
+        <classShapeMoniker Id="a639bb16-1626-46fb-8d02-e7679c8e103f" />
+        <classShapeMoniker Id="4eeabb85-e49f-414f-9394-e96f3b2d7c1e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 34.3924871324619); (13 : 34.3924871324619); (13 : 30.5891951497396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SiteMapNode/SW_SiteMapNode_SW_SiteMapNodeMetaTag" />
+      <nodes>
+        <classShapeMoniker Id="a639bb16-1626-46fb-8d02-e7679c8e103f" />
+        <classShapeMoniker Id="499fcf72-25d3-4bc6-854f-23e0a0fa7040" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 33.1588451538462); (8.40884515384616 : 33); (8.69791666666667 : 33 : JumpStart); (8.86458333333333 : 33 : JumpEnd); (12.9166666666667 : 33 : JumpStart); (13.0833333333333 : 33 : JumpEnd); (14.375 : 33); (14.375 : 27.4641951497396); (14.75 : 27.0891951497396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Searchwar_netEntities/SW_SiteMapNode/SW_SiteMapNode_SW_SiteMapNodeData" />
+      <nodes>
+        <classShapeMoniker Id="a639bb16-1626-46fb-8d02-e7679c8e103f" />
+        <classShapeMoniker Id="26659bd8-55bc-44fb-8c0a-6aeb5ae73871" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.164065625 : 26.2928898111979); (5.164065625 : 34.3304659016927); (6.25 : 34.3304659016927)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SiteMapNode" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="a639bb16-1626-46fb-8d02-e7679c8e103f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.898439375 : 26.2928898111979); (4.898439375 : 33.6964804508464); (5.08073229166667 : 33.6964804508464 : JumpStart); (5.24739895833333 : 33.6964804508464 : JumpEnd); (6.25 : 33.6964804508464)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Searchwar_netEntities/aspnet_User/aspnet_User_SW_SiteMapNode1" />
+      <nodes>
+        <classShapeMoniker Id="54ba904b-4b03-4109-8110-ed82fa5d7751" />
+        <classShapeMoniker Id="a639bb16-1626-46fb-8d02-e7679c8e103f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

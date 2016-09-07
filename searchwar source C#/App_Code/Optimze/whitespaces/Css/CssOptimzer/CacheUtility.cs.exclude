@@ -1,0 +1,36 @@
+﻿using System;
+using System.Web;
+using System.Reflection;
+
+namespace SearchWar.Optimize.Css {
+    public static class CacheUtility {
+        public static void Cache(TimeSpan duration, HttpContext context, int hash) {
+            HttpCachePolicy cache = context.Response.Cache;
+
+            FieldInfo maxAgeField = cache.GetType().GetField("_maxAge", BindingFlags.Instance | BindingFlags.NonPublic);
+            maxAgeField.SetValue(cache, duration);
+
+            cache.VaryByContentEncodings["Accept-Encoding"] = true;
+            cache.SetCacheability(HttpCacheability.Public);
+            context.Response.ContentType = "text/css";
+            cache.SetExpires(TimeZoneManager.DateTimeNow.Add(duration));
+            cache.SetMaxAge(duration);
+            cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
+
+
+            cache.AppendCacheExtension("must-revalidate, proxy-revalidate");
+
+            string etag = "\"" + hash.ToString() + "\"";
+            string incomingEtag = context.Request.Headers["If-None-Match"];
+
+            context.Response.Cache.SetETag(etag);
+
+            if (String.Compare(incomingEtag, etag) == 0) {
+                context.Response.Clear();
+                context.Response.StatusCode = (int)System.Net.HttpStatusCode.NotModified;
+                context.Response.SuppressContent = true;
+            }
+        }
+
+    }
+}

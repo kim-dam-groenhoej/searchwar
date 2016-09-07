@@ -1,0 +1,61 @@
+﻿using System;
+using System.IO;
+using System.Web;
+using System.Configuration;
+using System.IO.Compression;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.CodeDom.Compiler;
+
+/// <summary>
+/// A class where you can get the minified css code from all CSS files
+/// </summary>
+namespace SearchWar.Optimize.Css {
+    public class CssResource {
+        public CssResource() {
+            //
+            // TODO: Add constructor logic here
+            //
+        }
+
+        public static string GetCss() {
+            //Get the list of files specified in the FileSet
+            List<string> fileNames = CssSaver.GetAllCssPaths();
+            string code = null;
+
+            // lopp alle files
+            if (fileNames.Count > 0) {
+
+                //Write each files
+                foreach (string file in fileNames) {
+                    StringWriter sw = new StringWriter();
+
+                    // Execute (CSS)aspx page for resolveurls
+                    HttpContext.Current.Server.Execute(file, sw, false);
+
+                    code += sw.ToString();
+
+                    sw.Close();
+
+                }
+
+                fileNames.Clear();
+
+                return StripWhitespace(code);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Strips the whitespace from any .css file.
+        /// </summary>
+        private static string StripWhitespace(string body) {
+
+            Miron.Web.MbCompression.CssMinifier CreateMinifier = new Miron.Web.MbCompression.CssMinifier();
+            return CreateMinifier.Minify(new StringReader(body));
+        }
+
+    }
+}

@@ -1,0 +1,265 @@
+﻿.PnlSearchContent {
+  display: block;
+  float: left;
+  width: 470px;
+  height: auto;
+  padding: 0 5px 0 5px;
+}
+
+.PnlSearchContent .searchHead 
+{
+    margin: 8px 0 20px 1px;
+}
+
+    .TblBoxsTheme .LblHelp
+    {
+        font-weight: bold;
+        font-family: Arial;
+    }
+    
+    .TblBoxsTheme .hyperAdv 
+    {
+         cursor: pointer;
+         color: #404040;
+         line-height: 25px;
+         margin: 0 0 0 10px;
+    }
+    
+    .TblBoxsTheme .IconIsReq 
+    {
+        margin: 5px 5px 0 5px;
+        float: left;
+        display: block;
+    }
+   
+
+.loading {
+    display: inline;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    right: 0;
+    margin-left: 2px;
+    padding: 2px;
+    border: 0px;
+}
+
+.PnlInfoContent {
+  display: block;
+  padding: 0 5px 0 5px;
+  float: left;
+  width: 286px;
+  position: relative;
+  height: auto;
+}
+
+.PnlMarginFix {
+  margin: 0 0 15px 0;
+}
+
+.HyperBlog {
+  display: block;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+#DivSearchClanwar 
+{
+    padding-bottom: 10px;
+}
+
+.LblGameAndMode {
+  margin-top: 5px;
+  display: block;
+  font-family: arial;
+  color: #999;
+  font-weight: bold;
+}
+
+.LblFromDate, .LblToDate {
+  color: #4c6aaa;
+  font-weight: bold;
+}
+
+.LblFromTo {
+  color: #4c6aaa;
+  margin: 0 5px 0 5px;
+}
+
+
+.PnlHeadDate {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: auto;
+  height: auto;
+}
+
+.PnlHeadDate span {
+  float: left;
+  font-family: Arial;
+}
+
+a.HyperMatch {
+    display: block;
+    height: auto;
+    margin: 11px 0 20px 5px;
+    position: relative;
+    text-decoration: none;
+}
+
+.PnlMatchDetails {
+  float: left;
+  position: relative;
+  width: 260px;
+  height: auto;
+}
+
+.PnlMatchInfoBox {
+    background: #ddd;
+    padding: 5px;
+    display: block;
+    height: auto;
+    cursor: pointer;
+    margin-top: 2px;
+    overflow: hidden;
+}
+
+.LblNewestHead
+{
+    font-weight: bold;
+    color: #616;
+    height: auto;
+}
+
+.DdlSearchXvsXCentertext input {
+    text-align: center !important;
+}
+
+
+
+.DivChoose {
+    height: 20px;
+    margin: 0 0 0 5px;
+    line-height: 20px;
+    width: 26px;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    float: left;
+    z-index: 3000;
+    background-color: #fff;
+}
+
+.DivChoose span {
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 20px !important;
+}
+
+.chooseid {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1000px;
+    height: auto;
+    display: none;
+    z-index: 1000;
+    background: transparent url('/images/empty.gif.ashx');
+}
+
+.divChooseAmOrPm {
+    display: block;
+    overflow: hidden;
+    margin: 30px 0 0 0;
+}
+
+#amorpm 
+{
+    position:absolute;
+    width: auto;
+    display: block;
+    top: 8px;
+    left: 78px;
+}
+
+.divaround {
+    width: 42px !important;
+    height: 16px !important;
+    line-height: 16px !important;
+    padding: 0px !important;
+    position: relative !important;
+    cursor: pointer !important;
+    z-index: 11 !important;
+    cursor: pointer !important;
+}
+
+.PnlSearchContent .ddlspeciel {
+    padding: 0 0 0 22px;
+}
+
+.PnlSearchContent input[type=text] {
+    padding: 0 0 0 22px;
+    float: left;
+}
+
+.PnlSearchContent .time {
+    padding: 0 0 0 22px !important;
+}
+
+
+.iconWrapper 
+{
+    position: relative;
+}
+
+    .iconWrapper .icon 
+    {
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        display: block;
+        height: 16px;
+        width: 16px;
+        z-index: 1;
+    }
+    
+    .iconWrapper .icon.bugfix 
+    {
+        z-index: 15;
+    }
+
+.PnlSearchContent .fromdate 
+{
+    width: 80px !important;
+}
+
+.iconWrapper .icon-clanname
+{
+    background: transparent url('/images/search-icons.png') no-repeat -32px 0;
+}
+
+.iconWrapper .icon-continent
+{
+    background: transparent url('/images/search-icons.png') no-repeat -80px 0;
+}
+
+.iconWrapper .icon-versus
+{
+    background: transparent url('/images/search-icons.png') no-repeat -64px 0;
+}
+
+.iconWrapper .icon-gametype
+{
+    background: transparent url('/images/search-icons.png') no-repeat -48px 0;
+}
+
+.iconWrapper .icon-game 
+{
+    background: transparent url('/images/search-icons.png') no-repeat -16px 0;
+}
+
+.iconWrapper .icon-time
+{
+    background: transparent url('/images/search-icons.png') no-repeat 0px 0px;
+}

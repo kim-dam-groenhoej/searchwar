@@ -1,0 +1,40 @@
+﻿ <?php 
+ 
+    $qry="SELECT * FROM members WHERE login='".$_SESSION['SESS_LOGIN']."' AND admin='ja'"; 
+    $result=mysql_query($qry); 
+   
+    if ($_SESSION['SESS_ADMIN'] == "ja") { 
+  ?>
+    <h1>Slet nyheder</h1> 
+
+    <form method="post" action=""> 
+
+        <select> 
+<?php 
+            
+    $foresp = mysql_query("SELECT overskrift FROM nyheder ORDER BY dato DESC"); 
+    while ($data = mysql_fetch_array($foresp)) { 
+     
+?>
+            <option value="<?php echo $data["id"]; ?>"><?php echo $data["overskrift"]; ?></option> 
+<?php 
+    } 
+?> 
+        </select> 
+
+        <input value="Slet" type="submit"> 
+    </form> 
+
+<?php 
+        if (isset($_POST["id"])) { 
+
+            $id = mysql_real_escape_string($_POST["id"]); 
+            mysql_query("DELETE FROM nyheder WHERE overskrift='" . $id . "'"); 
+
+        }
+     
+   
+    } else { 
+        echo "No access granted."; 
+    } 
+?> 

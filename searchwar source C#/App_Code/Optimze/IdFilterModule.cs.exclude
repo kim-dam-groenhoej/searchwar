@@ -1,0 +1,26 @@
+﻿using System;
+using System.Web;
+
+/// <summary>
+/// This code is made by VirtualRichard and Durden81.
+/// URL for code: http://forum.umbraco.org/yaf_postst5965_W3C-Validation-ASPNET-ViewState-and-HTML-401.aspx
+/// </summary>
+
+namespace Company.Utilities {
+    public class IdFilterModule : IHttpModule {
+        public void Dispose() {
+        }
+
+        public void Init(HttpApplication app) {
+            app.ReleaseRequestState += new EventHandler(InstallResponseFilter);
+        }
+
+        private void InstallResponseFilter(object sender, EventArgs e) {
+            HttpResponse response = HttpContext.Current.Response;
+            
+            if (response.ContentType == "text/html") {
+                response.Filter = new IdAndImgFilter(response.Filter);
+            }
+        }
+    }
+}

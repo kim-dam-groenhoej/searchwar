@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for CssSaver
+/// </summary>
+namespace SearchWar.Optimize.Css {
+    public class CssSaver {
+        private static List<string> CssPaths = new List<string>();
+
+        public CssSaver() {
+
+        }
+
+        public static void SaveCssPath(string path) {
+            if (!string.IsNullOrEmpty(path)) {
+                CssPaths.Add(path);
+            }
+        }
+
+        public static void DeleteCssPath(string path) {
+            if (!string.IsNullOrEmpty(path)) {
+                CssPaths.Remove(path);
+            }
+        }
+
+        public static List<string> GetAllCssPaths() {
+            return CssPaths;
+        }
+    }
+}

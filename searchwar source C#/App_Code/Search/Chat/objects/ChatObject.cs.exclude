@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// Summary description for ChatObject
+/// </summary>
+namespace SearchWar.ChatSystem {
+    public class ChatObject {
+        public ChatObject() {
+            //
+            // TODO: Add constructor logic here
+            //
+        }
+
+        private string _personName;
+        private string _messageText;
+        private DateTime _messageDateAdded;
+        private Guid _chatId;
+
+        public string PersonName {
+            get { return _personName; }
+            set { _personName = value; }
+        }
+
+        public string MessageText {
+            get { return _messageText; }
+            set { _messageText = value; }
+        }
+
+        public DateTime MessageDateAdded {
+            get { return _messageDateAdded; }
+            set { _messageDateAdded = value; }
+        }
+
+        public Guid ChatId {
+            get { return _chatId; }
+            set { _chatId = value; }
+        }
+    }
+}

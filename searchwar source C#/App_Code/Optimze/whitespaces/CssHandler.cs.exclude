@@ -1,0 +1,150 @@
+﻿using System;
+using System.Web;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.IO.Compression;
+
+/// <summary>
+/// Code made by Kurt - URL: http://kurtschindler.net/blog/post/Removing-whitespace-and-compressing-CSS-files-with-an-HTTP-Handler.aspx
+/// </summary>
+public class CssHandler : IHttpHandler {
+    public bool IsReusable {
+        get { return false; }
+    }
+
+    public void ProcessRequest(HttpContext context) {
+        if (!string.IsNullOrEmpty(context.Request.QueryString["name"])) {
+            string fileName = context.Request.QueryString["name"];
+            string css = string.Empty;
+
+            // Check if a .css file was requested
+            if (!fileName.EndsWith("css", StringComparison.OrdinalIgnoreCase))
+                throw new System.Security.SecurityException("Invalid CSS file extension");
+
+            //load up css
+            css = RetrieveLocalCss(fileName);
+
+            // Make sure css isn't empty
+            if (!string.IsNullOrEmpty(css)) {
+                // Configure response headers
+                SetHeaders(css.GetHashCode(), context);
+
+                //write out css
+                context.Response.Write(css);
+
+                // compress
+                Compress(context);
+            } else {
+                context.Response.Status = "404 Bad Request";
+            }
+        }
+    }
+
+
+    /// <summary>
+    /// Retrieves the local CSS from the disk
+    /// </summary>
+    public static string RetrieveLocalCss(string file) {
+        string path = HttpContext.Current.Server.MapPath(file);
+        string css = string.Empty;
+        try {
+            using (StreamReader reader = new StreamReader(path)) {
+                // load CSS content
+                css = reader.ReadToEnd();
+
+                // Optimize CSS content
+                css = StripWhitespace(css);
+            }
+            return css;
+        } catch { return string.Empty; }
+    }
+
+
+    /// <summary>
+    /// Strips the whitespace from any .css file.
+    /// </summary>
+    private static string StripWhitespace(string body) {
+        body = body.Replace("  ", String.Empty);
+        body = body.Replace(Environment.NewLine, String.Empty);
+        body = body.Replace("\t", string.Empty);
+        body = body.Replace(" {", "{");
+        body = body.Replace(" :", ":");
+        body = body.Replace(": ", ":");
+        body = body.Replace(", ", ",");
+        body = body.Replace("; ", ";");
+        body = body.Replace(";}", "}");
+
+        // sometimes found when retrieving CSS remotely
+        body = body.Replace(@"?", string.Empty);
+
+        //body = Regex.Replace(body, @"/\*[^\*]*\*+([^/\*]*\*+)*/", "$1");
+        body = Regex.Replace(body, @"(?<=[>])\s{2,}(?=[<])|(?<=[>])\s{2,}(?=&nbsp;)|(?<=&ndsp;)\s{2,}(?=[<])", String.Empty);
+
+        //Remove comments from CSS
+        body = Regex.Replace(body, @"/\*[\d\D]*?\*/", string.Empty);
+
+        return body;
+    }
+
+
+    /// <summary>
+    /// This will make the browser and server keep the output
+    /// in its cache and thereby improve performance.
+    /// </summary>
+    private static void SetHeaders(int hash, HttpContext context) {
+        context.Response.ContentType = "text/css";
+        context.Response.Cache.VaryByHeaders["Accept-Encoding"] = true;
+
+        context.Response.Cache.SetExpires(TimeZoneManager.DateTimeNow.ToUniversalTime().AddDays(7));
+        context.Response.Cache.SetMaxAge(new TimeSpan(7, 0, 0, 0));
+        context.Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
+
+        string etag = "\"" + hash.ToString() + "\"";
+        string incomingEtag = context.Request.Headers["If-None-Match"];
+
+        context.Response.Cache.SetETag(etag);
+
+        if (String.Compare(incomingEtag, etag) == 0) {
+            context.Response.Clear();
+            context.Response.StatusCode = (int)System.Net.HttpStatusCode.NotModified;
+            context.Response.SuppressContent = true;
+        }
+    }
+
+    #region Compression
+
+    private const string GZIP = "gzip";
+    private const string DEFLATE = "deflate";
+
+    private static void Compress(HttpContext context) {
+        if (context.Request.UserAgent != null && context.Request.UserAgent.Contains("MSIE 6"))
+            return;
+
+        if (IsEncodingAccepted(GZIP)) {
+            context.Response.Filter = new GZipStream(context.Response.Filter, CompressionMode.Compress);
+            SetEncoding(GZIP);
+        } else if (IsEncodingAccepted(DEFLATE)) {
+            context.Response.Filter = new DeflateStream(context.Response.Filter, CompressionMode.Compress);
+            SetEncoding(DEFLATE);
+        }
+    }
+
+    /// <summary>
+    /// Checks the request headers to see if the specified
+    /// encoding is accepted by the client.
+    /// </summary>
+    private static bool IsEncodingAccepted(string encoding) {
+        return HttpContext.Current.Request.Headers["Accept-encoding"] != null && HttpContext.Current.Request.Headers["Accept-encoding"].Contains(encoding);
+    }
+
+    /// <summary>
+    /// Adds the specified encoding to the response headers.
+    /// </summary>
+    /// <param name="encoding"></param>
+    private static void SetEncoding(string encoding) {
+        HttpContext.Current.Response.AppendHeader("Content-encoding", encoding);
+    }
+
+    #endregion
+}

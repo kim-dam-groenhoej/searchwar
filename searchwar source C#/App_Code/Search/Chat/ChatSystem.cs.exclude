@@ -1,0 +1,258 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Linq;
+using System.Linq;
+using System.Web;
+using Searchwar_netModel;
+
+/// <summary>
+/// Summary description for ChatSystem
+/// </summary>
+namespace SearchWar.ChatSystem {
+    public class ChatSystem {
+        public ChatSystem() {
+            db = new Searchwar_netEntities();
+        }
+
+
+        private Searchwar_netEntities db;
+
+        #region Create
+
+
+        /// <summary>
+        /// Create chatwindow and return the chatid
+        /// </summary>
+        /// <returns>return chatid</returns>
+        public Guid CreateChat()
+        {
+            DateTime dateTimeNow = TimeZoneManager.DateTimeNow;
+
+            SW_chat createChat = new SW_chat
+                                     {
+                                         ChatDateAdded = dateTimeNow, 
+                                         ChatDateEdit = dateTimeNow
+                                     };
+
+            db.SW_chat.AddObject(createChat);
+
+            db.SaveChanges();
+
+            return createChat.ChatId;
+        }
+
+
+        public void CreateChatPerson(Guid userId, 
+            string userName)
+        {
+            DateTime dateTimeNow = TimeZoneManager.DateTimeNow;
+
+            SW_ChatPerson createPerson = new SW_ChatPerson
+                                             {
+                                                 ChatPersonName = userName,
+                                                 ChatPersonDateAdded = dateTimeNow,
+                                                 ChatPersonDateEdit = dateTimeNow
+                                             };
+
+            db.SW_ChatPersons.AddObject(createPerson);
+            db.SaveChanges();
+
+        }
+
+
+        #endregion
+
+
+        public bool CloseChat(Guid chatId, Guid userId) {
+            SW_chat result =
+                db.SW_chat.SingleOrDefault(
+                    c =>
+                    c.ChatId == chatId && c.SW_ChatMessages.Where(m => m.ChatPersonId == userId).FirstOrDefault() !=
+                    null);
+
+            if (result != null) {
+                result.ChatIsClosed = true;
+                StopBlinkingChat(chatId, userId);
+
+                db.SaveChanges();
+                return true;
+
+            }
+
+            return false;
+        }
+
+
+        public void UpdateChatPerson(Guid userId, 
+            string username)
+        {
+
+            SW_ChatPerson updatePerson = db.SW_ChatPersons.SingleOrDefault(p => p.ChatPersonId == userId);
+            updatePerson.ChatPersonName = username;
+
+            db.SaveChanges();
+
+        }
+
+
+        public void SendMessage(string text, 
+            Guid userId, 
+            Guid chatId)
+        {
+
+            SW_ChatMessage createMsg = new SW_ChatMessage
+                                           {
+                                               ChatMsgText = text,
+                                               ChatMsgDateAdded = TimeZoneManager.DateTimeNow,
+                                               ChatPersonId = userId,
+                                               ChatId = chatId
+                                           };
+
+            GoBlinkingChat(chatId, userId);
+
+            db.SW_ChatMessages.AddObject(createMsg);
+            db.SaveChanges();
+
+        }
+
+
+        private void GoBlinkingChat(Guid chatId, 
+            Guid userId)
+        {
+
+            SW_ChatBlinking getBlinking =
+                db.SW_ChatBlinking.SingleOrDefault(b => b.ChatId == chatId && b.ChatPersonId == userId);
+
+            if (getBlinking != null)
+            {
+
+                getBlinking.ChatStartBlinking = true;
+
+            } else
+            {
+
+                SW_ChatBlinking createChatb = new SW_ChatBlinking();
+                createChatb.ChatId = chatId;
+                createChatb.ChatPersonId = userId;
+                createChatb.ChatStartBlinking = true;
+                createChatb.ChatBlinkingId = Guid.NewGuid();
+
+                db.SW_ChatBlinking.AddObject(createChatb);
+
+            }
+
+            db.SaveChanges();
+
+        }
+
+        public void StopBlinkingChat(Guid chatId,
+            Guid userId) {
+
+            SW_ChatBlinking getBlinking =
+                db.SW_ChatBlinking.SingleOrDefault(b => b.ChatId == chatId && b.ChatPersonId == userId);
+
+            if (getBlinking != null) {
+
+                getBlinking.ChatStartBlinking = false;
+
+            }
+
+            db.SaveChanges();
+
+        }
+
+
+        private struct GetMessagesColumnNoPosition {
+            public Guid ChatId;
+            public Guid UserId;
+        }
+
+        private static readonly Func<Searchwar_netEntities, GetMessagesColumnNoPosition, IQueryable<ChatObject>>
+            GetMessagesReader = System.Data.Objects.CompiledQuery.Compile<Searchwar_netEntities, GetMessagesColumnNoPosition, IQueryable<ChatObject>>
+                                          ((db, p) => from c in db.SW_ChatMessages
+                                            where c.ChatId == p.ChatId && db.SW_ChatMessages.Where(m => m.ChatId == p.ChatId && m.ChatPersonId == p.UserId).FirstOrDefault() != null
+                                            select new ChatObject
+                                                       {
+                                                           ChatId = c.ChatId,
+                                                           MessageDateAdded = c.ChatMsgDateAdded,
+                                                           MessageText = c.ChatMsgText,
+                                                           PersonName = c.SW_ChatPersons.ChatPersonName
+                                          });
+
+
+        public List<ChatObject> GetMessages(Guid chatId, 
+            Guid secureUserId)
+        {
+            GetMessagesColumnNoPosition parameters = new GetMessagesColumnNoPosition()
+                                                         {
+                                                             ChatId = chatId,
+                                                             UserId = secureUserId
+                                                         };
+
+
+            List<ChatObject> msgs = GetMessagesReader(db, parameters).ToList<ChatObject>();
+
+            // db.ObjectTrackingEnabled = true;
+
+            return msgs;
+
+        }
+
+
+        private struct GetChatsColumnNoPosition {
+            public bool ClosedChat;
+            public Guid UserId;
+        }
+
+        private static readonly Func<Searchwar_netEntities, GetChatsColumnNoPosition, IQueryable<SW_chat>>
+            ReadGetChats = System.Data.Objects.CompiledQuery.Compile<Searchwar_netEntities, GetChatsColumnNoPosition, IQueryable<SW_chat>>
+                                          ((db, p) => from c in db.SW_chat
+                                                      where c.ChatIsClosed == p.ClosedChat && c.SW_ChatMessages.Where(m => m.ChatPersonId == p.UserId).FirstOrDefault() != null
+                                                      select c);
+
+
+        public List<SW_chat> GetChats(bool closedChat, 
+            Guid userId)
+        {
+
+            GetChatsColumnNoPosition parameters = new GetChatsColumnNoPosition()
+            {
+                ClosedChat = closedChat,
+                UserId = userId
+            };
+
+            // db.ObjectTrackingEnabled = false;
+
+            List<SW_chat> result = ReadGetChats(db, parameters).ToList<SW_chat>();
+
+            //db.ObjectTrackingEnabled = true;
+
+            return result;
+        }
+
+
+        public Boolean ChatPersonIsAlreadyInDb(Guid userId)
+        {
+            SW_ChatPerson getPerson = db.SW_ChatPersons.SingleOrDefault(p => p.ChatPersonId == userId);
+
+            if (getPerson != null)
+            {
+
+                return true;
+                
+            }
+
+
+            return false;
+        }
+
+        public void CleanUpAndClose()
+        {
+
+            db.Connection.Dispose();
+            db.Connection.Close();
+            db.Dispose();
+
+        }
+    }
+}

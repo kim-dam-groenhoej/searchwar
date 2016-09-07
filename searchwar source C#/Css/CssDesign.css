@@ -1,0 +1,264 @@
+﻿body {
+    background-color: #424242;
+    margin: 0px 0 10px 0;
+    padding: 20px 0 10px 0;
+    font-size: 11px;
+    color: #000;
+    line-height: 1.2em;
+    font-family: Verdana, Sans-Serif;
+}
+
+.PnlWrapperHeader, .PnlWrapperContent, .PnlWrapperBottomContent {
+    margin: auto;
+    width: 960px;
+}
+
+.PnlImgLogo {
+    background: url('/images/SearchWar_Logo-trans.png.ashx') no-repeat bottom;
+    width: 688px;
+    height: 225px;
+    cursor: pointer;
+}
+
+.PnlWrapperHeader {
+    height: 225px;
+    text-align: center;
+    position: relative;
+    z-index: 4;
+}
+
+.PnlHeader {
+    width: 960px;
+    z-index: 3;
+    height: 225px;
+}
+
+.menu a {
+    display: block !important;
+    font-family: arial, Sans-Serif !important;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 0 5px 27px !important;
+    color: #000;
+    text-decoration: none !important;
+    outline: 0 !important;
+}
+
+.menu a.selected 
+{
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #000 !important;
+    font-weight: bold;
+    background: #ddd;
+}
+
+.PnlContentBg {
+    display: block;
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+.PnlContentBottomBg {
+    height: 60px;
+    position:absolute;
+    z-index: 0;
+    width: 100%;
+    background: url('/images/ContentBottomFade-trans.png.ashx') repeat-x top;
+    bottom: -5px;
+    left: 0px;
+    right: 0px;
+    color: #000;
+}
+
+.PnlWrapperContent {
+    height: auto;
+    padding-top: 10px;
+    position: relative;
+    text-align: left;
+}
+
+.PnlWrapperContent a 
+{
+    text-decoration:underline;
+    cursor:pointer;
+    outline: 0 !important;
+}
+
+.PnlMainContent {
+    width: 986px;
+    display: block;
+    padding: 8px 0 60px 0;
+    height: auto;
+    color: #000;
+}
+
+.PnlJavscriptIsEnable {
+    display: none; 
+    overflow: hidden;
+    width: 100%;
+}
+
+.PnlMenuContent {
+  display: block;
+  width: 200px;
+  float: left;
+  overflow: hidden;
+  padding: 0 10px 0 0;
+  position: relative;
+  height: auto;
+}
+
+.PnlWrapperContent a {
+  color: #000;
+  font-size: 11px;
+  font-family: Verdana, Sans-Serif;
+}
+
+.PnlWrapperContent a:hover {
+  text-decoration: none;
+  color: #4C6AAA;
+}
+
+.PnlWrapperBottomContent {
+    margin-top: 20px;
+    height: 20px;
+    text-align: left;
+}
+
+.PnlBottomContent {
+    display: block;
+    width: 960px;
+    height: auto;
+    font-family: arial, Sans-Serif;
+    color: #fff;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.LblBottomContentProduction {
+    display: block;
+    margin-top: 2px;
+    float: left;
+    cursor: default;
+    height: auto;
+    width: auto;
+}
+
+.PnlBottomContent a {
+    float: left;
+    width: auto;
+    font-family: arial, Sans-Serif;
+    font-size: 10px;
+    color: #fff;
+    text-decoration: underline;
+    display: block;
+}
+
+.accordionInfoBtn 
+{
+    padding: 5px;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+    body .accordionInfoBtn.hidden a
+    {
+        color: #999 !important;
+    }
+
+    .accordionInfoBtn a 
+    {
+        color: #2f2f2f !important;
+        text-decoration: none !important;
+    }
+
+#userLogin 
+{
+    padding: 5px 0 0 0;
+    overflow: hidden;
+}
+
+#userLogin .errors 
+{
+    margin: 3px 0 2px 0;
+    color: Red;
+    display: block;
+    font-weight: bold;
+}
+
+    #userLogin td label 
+    {
+        font-weight: bold;
+        font-family: Arial;
+        font-size: 12px;
+    }
+
+    #userLogin td input 
+    {
+        width: 100%;
+        line-height: 22px !important;
+        margin: 4px 0 4px 5px;
+    }
+
+    #userLogin input 
+    {
+        margin: 0 5px 0 0;
+    }
+
+    #userLogin .ui-button 
+    {
+        margin: 5px 0 0 0;
+    }
+    
+.PnlBottomContent a:hover {
+    color: #00ff24;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#divTimeZone 
+{
+    float: right;
+    width: 300px;
+    padding: 0 10px 0 10px;
+}
+
+    #divTimeZone .label
+    {
+        padding: 0 6px 0 0;
+        line-height: 25px;
+        float: right;
+    }
+    
+    #divTimeZone .ddl
+    {
+        overflow: hidden;
+        float: right;
+    }
+
+#divLang
+{
+    width: auto;
+    width: 200px;
+    float: right;
+}
+
+    #divLang .label
+    {
+        padding: 0 6px 0 0;
+        line-height: 25px;
+        float: right;
+    }
+    
+    #divLang .ddl
+    {
+        overflow: hidden;
+        float: right;
+    }

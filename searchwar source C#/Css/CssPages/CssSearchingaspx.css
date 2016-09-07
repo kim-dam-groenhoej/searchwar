@@ -1,0 +1,82 @@
+﻿.PnlSearchResults {
+  display: block;
+  float: left;
+  width: 551px;
+  position: relative;
+  height: auto;
+  padding: 0 10px 0 5px;
+}
+
+.LblGameAndMode {
+  margin-top: 5px;
+  display: block;
+  font-family: arial;
+  color: #999;
+  font-weight: bold;
+}
+
+.LblFromDate, .LblToDate {
+  color: #4c6aaa;
+  font-weight: bold;
+}
+
+.LblFromTo {
+  color: #4c6aaa;
+  margin: 0 5px 0 5px;
+}
+
+
+
+.PnlHeadDate {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: auto;
+  height: auto;
+}
+
+.PnlHeadDate span {
+  float: left;
+  font-family: Arial;
+}
+
+.PnlMessageContent {
+  display: block;
+  float: left;
+  width: 190px;
+  position: relative;
+  height: auto;
+  padding: 0 5px 0 5px;
+}
+
+a.HyperMatch {
+    display: block;
+    height: auto;
+    margin: 20px 0 20px 5px;
+    position: relative;
+    text-decoration: none;
+}
+
+.PnlMatchDetails {
+  float: left;
+  position: relative;
+  width: 260px;
+  height: auto;
+}
+
+.PnlMatchInfoBox {
+    background: #ddd;
+    padding: 5px;
+    display: block;
+    height: auto;
+    cursor: pointer;
+    margin-top: 2px;
+    overflow: hidden;
+}
+
+.LblNewestHead
+{
+    font-weight: bold;
+    color: #616;
+    height: auto;
+}

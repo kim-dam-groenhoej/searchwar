@@ -1,0 +1,379 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register src="~/WebControls/CustomSiteMap.ascx" tagname="CustomSiteMap" tagprefix="CSiteMap" %>
+<%@ Register src="WebControls/Weblogin.ascx" tagname="Weblogin" tagprefix="uc3" %>
+
+
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+        
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="da">
+
+<head id="mh" runat="server">
+    <meta id="MetaCharset" runat="server" http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--[if lt IE 8]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+    <![endif]-->
+
+    <title>SearchWar.net - eSport, clan war, search</title>
+    <meta id="MetaDescription" runat="server" name="description" content="SearchWar.net - eSport, clan war, search" />
+    <meta id="MetaKeywords" runat="server" name="keywords" content="eSport, clan, war, search, cw, counter strike, match" />
+    <meta id="MetaLanguage" runat="server" name="language" content="en-US" />
+    <meta id="MetaAuthor" runat="server" name="author" content="Kim Dam Grønhøj" />
+    <meta id="MetaPublisher" runat="server" name="publisher" content="Kim Dam Grønhøj" />
+    <meta id="MetaCopyright" runat="server" name="copyright" content="Kim Dam Grønhøj - 2009" />
+    <meta id="MetaRevisitAfter" runat="server" name="Revisit-after" content="7 Days" />
+
+    <meta id="MetaRobots" runat="server" name="robots" content="index, follow" />
+    <meta id="MetaCache" runat="server" http-equiv="pragma" content="no-cache" />
+    <meta id="MetaCacheControl" runat="server" http-equiv="cache-control" content="Public" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7; IE=8" />
+    <%--helper for jquery ui images--%>
+
+
+    <%--headplaceholder--%>
+    <asp:ContentPlaceHolder id="h" runat="server">
+      
+    </asp:ContentPlaceHolder>
+
+
+      <%--google jquery load with autoload cmd --%>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+
+      <%--javascriptEnableOrDisable--%>
+      <script type="text/javascript">     
+            //<![CDATA[ 
+          var aspxMasterControlIds = {
+            PnlJavscriptIsEnable: "<%= "#" + PnlJavscriptIsEnable.ClientID %>",
+            Aspnetform: "<%= "#" + Aspnetform.ClientID %>",
+            HyperClanChat: "<%= "#" + HyperClanChat.ClientID %>",
+            PnlViewClanChats: "<%= "#" + PnlViewClanChats.ClientID %>",
+            DdlTimeZones: "<%= "#" + DdlTimeZones.ClientID %>",
+            DdlSelectLang:  "<%= "#" + DdlSelectLang.ClientID %>"
+          };
+
+          var aspxMasterValues = {
+            CssUrl: ""
+          };
+
+
+          $(document).ready(function() {
+              $(aspxMasterControlIds.DdlSelectLang).combobox({
+			        SpecielInBottom: "yes",
+                    width: "100px"
+		      });
+              $(aspxMasterControlIds.DdlTimeZones).combobox({
+			       SpecielInBottom: "yes"
+		      });
+
+
+
+
+                        var h3s = $("#accordionInfo").find("h3");
+		                h3s.addClass("ui-corner-all ui-priority-primary ui-state-default accordionInfoBtn hidden");
+                        h3s.next().css("display", "none").css("margin", "2px 0 10px 0").css("width", "100%");
+                        h3s.prepend("<span class='ui-icon ui-icon-circle-triangle-s' style='float: left; margin-right: 5px;'></span>");
+
+                        var firstH3 = h3s.first();
+                        firstH3.removeClass("hidden");
+                        firstH3.find(".ui-icon").removeClass("ui-icon-circle-triangle-s").addClass("ui-icon-circle-triangle-e");
+                        firstH3.next().css("display", "block");
+                        
+                        // event click
+                        h3s.click(function() {
+                            if ($(this).next().is(":visible") == false) {
+                                h3s.next().hide('fast');
+                                h3s.addClass("hidden");
+                                h3s.find(".ui-icon").removeClass("ui-icon-circle-triangle-e").addClass("ui-icon-circle-triangle-s");
+
+                                $(this).removeClass("hidden");
+                                $(this).find(".ui-icon").removeClass("ui-icon-circle-triangle-s").addClass("ui-icon-circle-triangle-e");
+                                $(this).next().show('fast');
+                            }
+                        });
+
+                        // event hover
+                        h3s.hover(function() {
+                            $(this).addClass("ui-state-hover");
+                        }, function() {
+                            $(this).removeClass("ui-state-hover");
+                        });
+
+
+
+                            // fixing login enter button bug
+                            $("#loginContent").find('input, select').keypress(function (event) {
+                                if (event.keyCode == 13) {
+                                    event.preventDefault();
+                                    $("#loginContent .loginBtn").focus();     
+                                    document.location = $("#loginContent .loginBtn").attr("href");
+                                    return false;
+                                }
+                            });
+
+          });
+      
+          function CreateChat() {
+            
+          
+          }
+          
+          function OpenChat() {
+          }
+          
+          function CloseChat() {
+          }
+          
+          function GetChats() {
+          }
+          
+          function GetChatMessages() {
+          }
+          
+          function HideChat() {
+          }
+          
+          function SendChatMessage() {
+          }
+          
+          function ChatMainBlink() {
+          }
+          
+          function ChatBlink() {
+          } 
+
+
+
+          //]]> 
+      </script>
+      
+
+
+      <%--javascriptplaceholder--%>
+      <asp:ContentPlaceHolder id="cj" runat="server">
+
+
+      </asp:ContentPlaceHolder>
+
+       <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css" media="all" type="text/css" rel="Stylesheet" />
+
+</head>
+
+<body>
+
+              <noscript style="font-size: 22px;font-weight:bold;">
+                <label id="ErrorJS" runat="server"></label>
+              </noscript>
+
+      
+    <form id="Aspnetform" runat="server">
+
+    <asp:ScriptManager ID="scriptsall" runat="server" CompositeScript-Path CompositeScript-ScriptMode="Release" ScriptMode="Release" AjaxFrameworkMode="Disabled" ClientIDMode="Predictable" EnableCdn="true" LoadScriptsBeforeUI="false">
+    <CompositeScript>
+        <Scripts>
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" />
+            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" />
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" />
+        </Scripts>
+    </CompositeScript>
+    </asp:ScriptManager>
+    
+
+    <%--Detect timezone system START --%>
+    <div id="DivTimeZone" runat="server" visible="false">
+            
+            <div id="DivDetectTimeZoneBox" title="Detect TimeZone">
+	            <br /><br />
+                <p style="text-align: center; font-weight: bold; display: block; width: 100%; height: 100%;">
+                <label id="detectText" meta:resourcekey="detectText" runat="server"></label>
+                <br /><br />
+                <asp:Image ID="ImgLoading" ImageUrl="~/images/search.gif" runat="server" />
+                
+                </p>
+            </div>
+
+
+            <script type="text/javascript">
+            //<![CDATA[
+                $(window).load(function () {
+
+                    $("#DivDetectTimeZoneBox").dialog({
+                        modal: true
+                });
+
+                var rightNow = new Date();
+                var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+                var temp = jan1.toGMTString();
+                var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+                var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
+
+                if (std_time_offset < 10) {
+                    std_time_offset = "0" + std_time_offset;
+                }
+
+                $(aspxMasterControlIds.DdlTimeZones).val(std_time_offset + ":00:00");
+                $(aspxMasterControlIds.DdlTimeZones).change();
+
+            });
+                //]]> 
+            </script>
+    </div>
+    <%--Detect timezone system END --%>
+
+    <div id="DivVsKey">
+      <asp:HiddenField ID="vsKey" runat="server" />
+    </div>
+    
+    <div class="PnlWrapperHeader">
+
+    <div class="PnlChatCursorHelper">
+        <div class="PnlChat">
+    
+          <div id="PnlViewClanChats" runat="server" class="PnlViewClanChats">
+
+            <ul id="ulClanChatList" runat="server">
+              <li id="liClanChat">
+                <asp:Label ID="LblChatNumber" CssClass="LblChatNumber" runat="server"></asp:Label> <asp:Label ID="LblClanName" runat="server"></asp:Label>
+              </li>
+            </ul>
+            
+          </div>
+
+          <a id="HyperClanChat" class="HyperClanChat" runat="server">
+              <div class="text">
+                <div class="btnBg"></div>
+                <asp:Label ID="LblClanchat" runat="server" meta:resourcekey="LblClanchat"></asp:Label> <asp:Label ID="LblChatCount" CssClass="LblChatCount" runat="server" Text="(9)"></asp:Label>
+              </div>
+          </a>
+            
+          
+        </div>
+     </div>
+    
+        <div class="PnlHeader">
+        
+        
+          <asp:HyperLink ID="HyperImgLogo" runat="server" meta:resourcekey="ImgLogoResource1" NavigateUrl="~/home">
+            
+            <asp:Panel ID="PnlImgLogo" EnableViewState="false" meta:resourcekey="ImgLogoResource1" CssClass="PnlImgLogo" runat="server">
+            </asp:Panel>
+
+          </asp:HyperLink>
+        
+
+
+        </div>
+        
+    </div>
+    
+    <div class="PnlContentBg">     
+
+        <div class="PnlContentBottomBg">
+        </div>
+                
+        <div class="PnlWrapperContent">
+        
+            <div class="PnlMainContent">
+            
+              <div id="PnlJavscriptIsEnable" runat="server" class="PnlJavscriptIsEnable">
+
+                  <div class="PnlMenuContent">
+
+
+        <div id="accordionInfo">
+
+
+
+            <h3><a>Login</a></h3>
+            <div>
+                <asp:LoginView ID="UserLoginView" runat="server">
+                    <AnonymousTemplate>
+                        <div id="loginContent">
+                            <uc3:WebLogin ID="weblogin" runat="server" />
+                        </div>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        
+                        <asp:Label ID="LblUserName" runat="server" Text="Brugernavn"></asp:Label> <asp:LoginName ID="LoginName1" runat="server" />
+                        <br />
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+
+        	<h3><a  ID="H3MainMenu" runat="server">Hovedmenu</a></h3>
+	        <div>
+
+                  <div class="menu">
+                    <CSiteMap:CustomSiteMap ID="CMenu" runat="server" />
+                  </div>
+
+            </div>
+
+	    </div>
+
+        </div>
+
+                  
+                  <%--maincontentplaceholder--%>
+                  <asp:ContentPlaceHolder id="cp" runat="server">
+                    
+                  </asp:ContentPlaceHolder>
+
+                
+              </div>
+            
+            </div>
+        
+        </div>
+        
+    </div>
+        
+    <div class="PnlWrapperBottomContent"> 
+    
+           <div class="PnlBottomContent">     
+                
+                <div style="float: right; width: auto;">
+                    
+                    <div id="divLang">
+                        <div class="ddl">
+                            <asp:DropDownList ID="DdlSelectLang" CssClass="DdlSelectLang" ValidationGroup="ChangeLang"
+                                AutoPostBack="True" EnableViewState="true" runat="server" 
+                                onselectedindexchanged="DdlSelectLang_SelectedIndexChanged">
+                            </asp:DropDownList>
+                        </div>
+                        <asp:Label ID="LblLang" CssClass="label" runat="server" EnableViewState="false" 
+                            meta:resourcekey="LblLangResource1"></asp:Label>
+                    </div>
+
+                    
+                    <div id="divTimeZone">
+                        <div class="ddl">
+                            <asp:DropDownList ID="DdlTimeZones" CssClass="DdlSelectLang" ValidationGroup="ChangeTimeZone"
+                                AutoPostBack="True" EnableViewState="true" runat="server" OnSelectedIndexChanged="DdlTimeZones_SelectedIndexChanged" style="margin-right: 10px;">
+                            </asp:DropDownList>
+                        </div>
+                        <asp:Label ID="LblTimeZone" CssClass="label" runat="server" EnableViewState="false" 
+                            meta:resourcekey="LblTimeZoneResource1"></asp:Label>
+                    </div>
+                
+                </div>
+                
+               <asp:Label ID="LblBottomContentProduction" meta:resourcekey="LblBottomContentProductionResource1" runat="server" EnableViewState="false"
+                   CssClass="LblBottomContentProduction"></asp:Label>
+                
+           </div>
+           
+    </div>
+    
+    </form>
+
+
+</body>
+</html>

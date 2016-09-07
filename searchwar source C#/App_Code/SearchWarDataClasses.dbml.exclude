@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Searchwar_net" Class="Searchwar_netEntities" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=server.freestuff.dk;Initial Catalog=Searchwar_net;Persist Security Info=True;User ID=website_searchwar" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SearchWarConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.aspnet_Applications" Member="aspnet_Applications">
+    <Type Name="aspnet_Application">
+      <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredApplicationName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="aspnet_Application_aspnet_Membership" Member="aspnet_Memberships" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Membership" />
+      <Association Name="aspnet_Application_aspnet_Path" Member="aspnet_Paths" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
+      <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Roles" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
+      <Association Name="aspnet_Application_aspnet_User" Member="aspnet_Users" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_User" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SiteMapNodeRoles" Member="SW_SiteMapNodeRoles">
+    <Type Name="SW_SiteMapNodeRole">
+      <Column Name="SiteMapNodeRoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteMapNodeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeRoleAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeRoleAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_Role_SW_SiteMapNodeRole" Member="aspnet_Role" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
+      <Association Name="SW_SiteMapNode_SW_SiteMapNodeRole" Member="SW_SiteMapNode" ThisKey="SiteMapNodeId" OtherKey="SiteMapNodeId" Type="SW_SiteMapNode" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Membership" Member="aspnet_Memberships">
+    <Type Name="aspnet_Membership">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MobilePIN" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LoweredEmail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordQuestion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordAnswer" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPasswordChangedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLockoutDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="aspnet_Application_aspnet_Membership" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Paths" Member="aspnet_Paths">
+    <Type Name="aspnet_Path">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PathId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredPath" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser" Member="aspnet_PersonalizationAllUser" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationAllUser" Cardinality="One" />
+      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser" Member="aspnet_PersonalizationPerUsers" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationPerUser" />
+      <Association Name="aspnet_Application_aspnet_Path" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_PersonalizationAllUsers" Member="aspnet_PersonalizationAllUsers">
+    <Type Name="aspnet_PersonalizationAllUser">
+      <Column Name="PathId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PageSettings" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser" Member="aspnet_Path" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_PersonalizationPerUser" Member="aspnet_PersonalizationPerUsers">
+    <Type Name="aspnet_PersonalizationPerUser">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PathId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PageSettings" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser" Member="aspnet_Path" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
+      <Association Name="aspnet_User_aspnet_PersonalizationPerUser" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Profile" Member="aspnet_Profiles">
+    <Type Name="aspnet_Profile">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PropertyNames" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PropertyValuesString" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PropertyValuesBinary" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_aspnet_Profile" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Roles" Member="aspnet_Roles">
+    <Type Name="aspnet_Role">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredRoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="aspnet_Role_SW_SiteMapNodeRole" Member="SW_SiteMapNodeRoles" ThisKey="RoleId" OtherKey="RoleId" Type="SW_SiteMapNodeRole" />
+      <Association Name="aspnet_Role_aspnet_UsersInRole" Member="aspnet_UsersInRoles" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
+      <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_SchemaVersions" Member="aspnet_SchemaVersions">
+    <Type Name="aspnet_SchemaVersion">
+      <Column Name="Feature" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CompatibleSchemaVersion" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsCurrentVersion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_Membership" ThisKey="UserId" OtherKey="UserId" Type="aspnet_Membership" Cardinality="One" />
+      <Association Name="aspnet_User_aspnet_PersonalizationPerUser" Member="aspnet_PersonalizationPerUsers" ThisKey="UserId" OtherKey="UserId" Type="aspnet_PersonalizationPerUser" />
+      <Association Name="aspnet_User_aspnet_Profile" Member="aspnet_Profile" ThisKey="UserId" OtherKey="UserId" Type="aspnet_Profile" Cardinality="One" />
+      <Association Name="aspnet_User_aspnet_UsersInRole" Member="aspnet_UsersInRoles" ThisKey="UserId" OtherKey="UserId" Type="aspnet_UsersInRole" />
+      <Association Name="aspnet_User_SW_Faq" Member="SW_Faqs" ThisKey="UserId" OtherKey="FAQAddedByUserId" Type="SW_Faq" />
+      <Association Name="aspnet_User_SW_Faq1" Member="SW_Faqs1" ThisKey="UserId" OtherKey="FAQEditByUserId" Type="SW_Faq" />
+      <Association Name="aspnet_User_SW_SearchWarCountry" Member="SW_SearchWarCountries" ThisKey="UserId" OtherKey="SearchWarCountryAddedUserId" Type="SW_SearchWarCountry" />
+      <Association Name="aspnet_User_SW_SearchWarCountry1" Member="SW_SearchWarCountries1" ThisKey="UserId" OtherKey="SearchWarCountryEditUserId" Type="SW_SearchWarCountry" />
+      <Association Name="aspnet_User_SW_SearchWarGame" Member="SW_SearchWarGames" ThisKey="UserId" OtherKey="SearchWarGameAddedUserId" Type="SW_SearchWarGame" />
+      <Association Name="aspnet_User_SW_SearchWarGame1" Member="SW_SearchWarGames1" ThisKey="UserId" OtherKey="SearchWarGameEditUserId" Type="SW_SearchWarGame" />
+      <Association Name="aspnet_User_SW_SearchWarGameType" Member="SW_SearchWarGameTypes" ThisKey="UserId" OtherKey="SearchWarGameTypeAddedUserId" Type="SW_SearchWarGameType" />
+      <Association Name="aspnet_User_SW_SearchWarGameType1" Member="SW_SearchWarGameTypes1" ThisKey="UserId" OtherKey="SearchWarGameTypeEditUserId" Type="SW_SearchWarGameType" />
+      <Association Name="aspnet_User_SW_SearchWarSkill" Member="SW_SearchWarSkills" ThisKey="UserId" OtherKey="SearchWarSkillAddedUserId" Type="SW_SearchWarSkill" />
+      <Association Name="aspnet_User_SW_SearchWarSkill1" Member="SW_SearchWarSkills1" ThisKey="UserId" OtherKey="SearchWarSkillEditUserId" Type="SW_SearchWarSkill" />
+      <Association Name="aspnet_User_SW_SiteMapNodeMetaTag" Member="SW_SiteMapNodeMetaTags" ThisKey="UserId" OtherKey="MetaTagsAddedUserId" Type="SW_SiteMapNodeMetaTag" />
+      <Association Name="aspnet_User_SW_SiteMapNodeMetaTag1" Member="SW_SiteMapNodeMetaTags1" ThisKey="UserId" OtherKey="MetaTagsEditUserId" Type="SW_SiteMapNodeMetaTag" />
+      <Association Name="aspnet_User_SW_Blog" Member="SW_Blogs" ThisKey="UserId" OtherKey="BlogAddedByUserId" Type="SW_Blog" />
+      <Association Name="aspnet_User_SW_Blog1" Member="SW_Blogs1" ThisKey="UserId" OtherKey="BlogEditByUserId" Type="SW_Blog" />
+      <Association Name="aspnet_User_SW_SearchWarContinent" Member="SW_SearchWarContinents" ThisKey="UserId" OtherKey="SearchWarContinentAddedUserId" Type="SW_SearchWarContinent" />
+      <Association Name="aspnet_User_SW_SearchWarContinent1" Member="SW_SearchWarContinents1" ThisKey="UserId" OtherKey="SearchWarContinentEditUserId" Type="SW_SearchWarContinent" />
+      <Association Name="aspnet_User_SW_SiteMapNode" Member="SW_SiteMapNodes" ThisKey="UserId" OtherKey="SiteMapNodeAddedUserId" Type="SW_SiteMapNode" />
+      <Association Name="aspnet_User_SW_SiteMapNode1" Member="SW_SiteMapNodes1" ThisKey="UserId" OtherKey="SiteMapNodeEditUserId" Type="SW_SiteMapNode" />
+      <Association Name="aspnet_Application_aspnet_User" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_UsersInRoles" Member="aspnet_UsersInRoles">
+    <Type Name="aspnet_UsersInRole">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="aspnet_Role_aspnet_UsersInRole" Member="aspnet_Role" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
+      <Association Name="aspnet_User_aspnet_UsersInRole" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_WebEvent_Events" Member="aspnet_WebEvent_Events">
+    <Type Name="aspnet_WebEvent_Event">
+      <Column Name="EventId" Type="System.String" DbType="Char(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventTimeUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventType" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="EventSequence" Type="System.Decimal" DbType="Decimal(19,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EventOccurrence" Type="System.Decimal" DbType="Decimal(19,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EventCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventDetailCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="ApplicationPath" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ApplicationVirtualPath" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="MachineName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestUrl" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="ExceptionType" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_Advertise" Member="SW_Advertises">
+    <Type Name="SW_Advertise">
+      <Column Name="AdvertiseId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdvertiseCode" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertisePlaceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseCompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseName" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseEditDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AdvertiseShowFromDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseShowToDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseAddedUserId" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseEditUserId" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SW_AdvertiseCompany_SW_Advertise" Member="SW_AdvertiseCompany" ThisKey="AdvertiseCompanyId" OtherKey="AdvertiseCompanyId" Type="SW_AdvertiseCompany" IsForeignKey="true" />
+      <Association Name="SW_AdvertisePlace_SW_Advertise" Member="SW_AdvertisePlace" ThisKey="AdvertisePlaceId" OtherKey="AdvertisePlaceId" Type="SW_AdvertisePlace" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_AdvertiseCompany" Member="SW_AdvertiseCompanies">
+    <Type Name="SW_AdvertiseCompany">
+      <Column Name="AdvertiseCompanyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdvertiseCompanyName" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseCompanyDesc" Type="System.String" DbType="VarChar(800)" CanBeNull="true" />
+      <Column Name="AdvertiseCompanyAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseCompanyEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseCompanyAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertiseCompanyEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_AdvertiseCompany_SW_Advertise" Member="SW_Advertises" ThisKey="AdvertiseCompanyId" OtherKey="AdvertiseCompanyId" Type="SW_Advertise" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_AdvertisePlace" Member="SW_AdvertisePlaces">
+    <Type Name="SW_AdvertisePlace">
+      <Column Name="AdvertisePlaceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdvertisePlaceDesc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AdvertisePlaceAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertisePlaceEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertisePlaceAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AdvertisePlaceEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_AdvertisePlace_SW_Advertise" Member="SW_Advertises" ThisKey="AdvertisePlaceId" OtherKey="AdvertisePlaceId" Type="SW_Advertise" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_Banlist" Member="SW_Banlists">
+    <Type Name="SW_Banlist">
+      <Column Name="BanId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BanIpAddress" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_Faq" Member="SW_Faqs">
+    <Type Name="SW_Faq">
+      <Column Name="FAQId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FAQAddedByUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FAQEditByUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FAQAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FAQEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SW_Faq_SW_FaqData" Member="SW_FaqDatas" ThisKey="FAQId" OtherKey="FAQId" Type="SW_FaqData" />
+      <Association Name="aspnet_User_SW_Faq" Member="aspnet_User" ThisKey="FAQAddedByUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_Faq1" Member="aspnet_User1" ThisKey="FAQEditByUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_FaqData" Member="SW_FaqDatas">
+    <Type Name="SW_FaqData">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FAQId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FAQQuestion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="FAQAnswer" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="SW_Faq_SW_FaqData" Member="SW_Faq" ThisKey="FAQId" OtherKey="FAQId" Type="SW_Faq" IsForeignKey="true" />
+      <Association Name="SW_Lang_SW_FaqData" Member="SW_Lang" ThisKey="LangId" OtherKey="LangId" Type="SW_Lang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarContinentData" Member="SW_SearchWarContinentDatas">
+    <Type Name="SW_SearchWarContinentData">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SearchWarContinentId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SearchWarContinentName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Association Name="SW_Lang_SW_SearchWarContinentData" Member="SW_Lang" ThisKey="LangId" OtherKey="LangId" Type="SW_Lang" IsForeignKey="true" />
+      <Association Name="SW_SearchWarContinent_SW_SearchWarContinentData" Member="SW_SearchWarContinent" ThisKey="SearchWarContinentId" OtherKey="SearchWarContinentId" Type="SW_SearchWarContinent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarCountry" Member="SW_SearchWarCountries">
+    <Type Name="SW_SearchWarCountry">
+      <Column Name="SearchWarCountryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SearchWarCountryAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarCountryEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarCountryAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarCountryEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarContinentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SearchWarCountry_SW_SearchWarCountryData" Member="SW_SearchWarCountryDatas" ThisKey="SearchWarCountryId" OtherKey="SearchWarCountrytId" Type="SW_SearchWarCountryData" />
+      <Association Name="SW_SearchWarCountry_SW_SearchWarCountryData1" Member="SW_SearchWarCountryData1s" ThisKey="SearchWarCountryId" OtherKey="SearchWarCountrytId" Type="SW_SearchWarCountryData1" />
+      <Association Name="SW_SearchWarCountry_SW_SearchWar" Member="SW_SearchWars" ThisKey="SearchWarCountryId" OtherKey="SearchWarSearchCountryId" Type="SW_SearchWar" />
+      <Association Name="SW_SearchWarCountry_SW_SearchWar1" Member="SW_SearchWars1" ThisKey="SearchWarCountryId" OtherKey="SearchWarClanCountryId" Type="SW_SearchWar" />
+      <Association Name="aspnet_User_SW_SearchWarCountry" Member="aspnet_User" ThisKey="SearchWarCountryAddedUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_SearchWarCountry1" Member="aspnet_User1" ThisKey="SearchWarCountryEditUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="SW_SearchWarContinent_SW_SearchWarCountry" Member="SW_SearchWarContinent" ThisKey="SearchWarContinentId" OtherKey="SearchWarContinentId" Type="SW_SearchWarContinent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarCountryData" Member="SW_SearchWarCountryDatas">
+    <Type Name="SW_SearchWarCountryData">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SearchWarCountrytId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SearchWarCountryName" Type="System.String" DbType="VarChar(140) NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarCountryTLD" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SearchWarCountry_SW_SearchWarCountryData" Member="SW_SearchWarCountry" ThisKey="SearchWarCountrytId" OtherKey="SearchWarCountryId" Type="SW_SearchWarCountry" IsForeignKey="true" />
+      <Association Name="SW_Lang_SW_SearchWarCountryData" Member="SW_Lang" ThisKey="LangId" OtherKey="LangId" Type="SW_Lang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarGame" Member="SW_SearchWarGames">
+    <Type Name="SW_SearchWarGame">
+      <Column Name="SearchWarGameId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SearchWarGameName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SearchWarGame_SW_SearchWarGameType" Member="SW_SearchWarGameTypes" ThisKey="SearchWarGameId" OtherKey="SearchWarGameId" Type="SW_SearchWarGameType" />
+      <Association Name="SW_SearchWarGame_SW_SearchWar" Member="SW_SearchWars" ThisKey="SearchWarGameId" OtherKey="SearchWarSearchGameId" Type="SW_SearchWar" />
+      <Association Name="aspnet_User_SW_SearchWarGame" Member="aspnet_User" ThisKey="SearchWarGameAddedUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_SearchWarGame1" Member="aspnet_User1" ThisKey="SearchWarGameEditUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarGameType" Member="SW_SearchWarGameTypes">
+    <Type Name="SW_SearchWarGameType">
+      <Column Name="SearchWarGameTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SearchWarGameId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameTypeName" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameTypeAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameTypeEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameTypeAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarGameTypeEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SearchWarGameType_SW_SearchWar" Member="SW_SearchWars" ThisKey="SearchWarGameTypeId" OtherKey="SearchWarSearchGameTypeId" Type="SW_SearchWar" />
+      <Association Name="aspnet_User_SW_SearchWarGameType" Member="aspnet_User" ThisKey="SearchWarGameTypeAddedUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_SearchWarGameType1" Member="aspnet_User1" ThisKey="SearchWarGameTypeEditUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="SW_SearchWarGame_SW_SearchWarGameType" Member="SW_SearchWarGame" ThisKey="SearchWarGameId" OtherKey="SearchWarGameId" Type="SW_SearchWarGame" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarPlayer" Member="SW_SearchWarPlayers">
+    <Type Name="SW_SearchWarPlayer">
+      <Column Name="SearchWarPlayerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SearchWarNick" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="SearchWarId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SearchWar_SW_SearchWarPlayer" Member="SW_SearchWar" ThisKey="SearchWarId" OtherKey="SearchWarId" Type="SW_SearchWar" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarSkill" Member="SW_SearchWarSkills">
+    <Type Name="SW_SearchWarSkill">
+      <Column Name="SearchWarSkillId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SearchWarSkillSort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarSkillAddedDatetime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarSkillEditDatetime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarSkillAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarSkillEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SearchWarSkill_SW_SearchWarSkillData" Member="SW_SearchWarSkillDatas" ThisKey="SearchWarSkillId" OtherKey="SearchWarSkillId" Type="SW_SearchWarSkillData" />
+      <Association Name="SW_SearchWarSkill_SW_SearchWar" Member="SW_SearchWars" ThisKey="SearchWarSkillId" OtherKey="SearchWarSearchSkillId" Type="SW_SearchWar" />
+      <Association Name="SW_SearchWarSkill_SW_SearchWar1" Member="SW_SearchWars1" ThisKey="SearchWarSkillId" OtherKey="SearchWarClanSkillId" Type="SW_SearchWar" />
+      <Association Name="aspnet_User_SW_SearchWarSkill" Member="aspnet_User" ThisKey="SearchWarSkillAddedUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_SearchWarSkill1" Member="aspnet_User1" ThisKey="SearchWarSkillEditUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SiteMapNodeMetaTags" Member="SW_SiteMapNodeMetaTags">
+    <Type Name="SW_SiteMapNodeMetaTag">
+      <Column Name="MetaTagsId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetaTagsAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MetaTagsEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MetaTagsEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MetaTagsAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SiteMapNodeMetaTag_SW_SiteMapNodeMetaTagsData" Member="SW_SiteMapNodeMetaTagsDatas" ThisKey="MetaTagsId" OtherKey="MetaTagsId" Type="SW_SiteMapNodeMetaTagsData" />
+      <Association Name="aspnet_User_SW_SiteMapNodeMetaTag" Member="aspnet_User" ThisKey="MetaTagsAddedUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_SiteMapNodeMetaTag1" Member="aspnet_User1" ThisKey="MetaTagsEditUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="SW_SiteMapNode_SW_SiteMapNodeMetaTag" Member="SW_SiteMapNode" ThisKey="MetaTagsId" OtherKey="SiteMapNodeId" Type="SW_SiteMapNode" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SiteMapNodeMetaTagsData" Member="SW_SiteMapNodeMetaTagsDatas">
+    <Type Name="SW_SiteMapNodeMetaTagsData">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetaTagsId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetaTagsTitle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MetaTagsDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MetaTagsKeywords" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="MetaTagsLanguage" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="MetaTagsAuthor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MetaTagsPublisher" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MetaTagsCopyright" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MetaTagsRevisitAfter" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MetaTagsRobots" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="MetaTagsCache" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MetaTagsCacheControl" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="SW_SiteMapNodeMetaTag_SW_SiteMapNodeMetaTagsData" Member="SW_SiteMapNodeMetaTag" ThisKey="MetaTagsId" OtherKey="MetaTagsId" Type="SW_SiteMapNodeMetaTag" IsForeignKey="true" />
+      <Association Name="SW_Lang_SW_SiteMapNodeMetaTagsData" Member="SW_Lang" ThisKey="LangId" OtherKey="LangId" Type="SW_Lang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_Blog" Member="SW_Blogs">
+    <Type Name="SW_Blog">
+      <Column Name="BlogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BlogAddedByUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BlogEditByUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BlogAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BlogEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SW_Blog_SW_BlogData" Member="SW_BlogDatas" ThisKey="BlogId" OtherKey="BlogId" Type="SW_BlogData" />
+      <Association Name="aspnet_User_SW_Blog" Member="aspnet_User" ThisKey="BlogAddedByUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_Blog1" Member="aspnet_User1" ThisKey="BlogEditByUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_BlogData" Member="SW_BlogDatas">
+    <Type Name="SW_BlogData">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BlogId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BlogTitle" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="BlogText" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="SW_Blog_SW_BlogData" Member="SW_Blog" ThisKey="BlogId" OtherKey="BlogId" Type="SW_Blog" IsForeignKey="true" />
+      <Association Name="SW_Lang_SW_BlogData" Member="SW_Lang" ThisKey="BlogId" OtherKey="LangId" Type="SW_Lang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_Lang" Member="SW_Langs">
+    <Type Name="SW_Lang">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LangName" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="LangShortname" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="SW_Lang_SW_FaqData" Member="SW_FaqDatas" ThisKey="LangId" OtherKey="LangId" Type="SW_FaqData" />
+      <Association Name="SW_Lang_SW_SearchWarContinentData" Member="SW_SearchWarContinentDatas" ThisKey="LangId" OtherKey="LangId" Type="SW_SearchWarContinentData" />
+      <Association Name="SW_Lang_SW_SearchWarCountryData" Member="SW_SearchWarCountryDatas" ThisKey="LangId" OtherKey="LangId" Type="SW_SearchWarCountryData" />
+      <Association Name="SW_Lang_SW_SiteMapNodeMetaTagsData" Member="SW_SiteMapNodeMetaTagsDatas" ThisKey="LangId" OtherKey="LangId" Type="SW_SiteMapNodeMetaTagsData" />
+      <Association Name="SW_Lang_SW_BlogData" Member="SW_BlogDatas" ThisKey="LangId" OtherKey="BlogId" Type="SW_BlogData" />
+      <Association Name="SW_Lang_SW_SearchWarSkillData" Member="SW_SearchWarSkillDatas" ThisKey="LangId" OtherKey="LangId" Type="SW_SearchWarSkillData" />
+      <Association Name="SW_Lang_SW_SearchWarCountryData1" Member="SW_SearchWarCountryData1s" ThisKey="LangId" OtherKey="LangId" Type="SW_SearchWarCountryData1" />
+      <Association Name="SW_Lang_SW_SiteMapNodeData" Member="SW_SiteMapNodeDatas" ThisKey="LangId" OtherKey="LangId" Type="SW_SiteMapNodeData" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarSkillData" Member="SW_SearchWarSkillDatas">
+    <Type Name="SW_SearchWarSkillData">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SearchWarSkillId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SearchWarSkillName" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Association Name="SW_Lang_SW_SearchWarSkillData" Member="SW_Lang" ThisKey="LangId" OtherKey="LangId" Type="SW_Lang" IsForeignKey="true" />
+      <Association Name="SW_SearchWarSkill_SW_SearchWarSkillData" Member="SW_SearchWarSkill" ThisKey="SearchWarSkillId" OtherKey="SearchWarSkillId" Type="SW_SearchWarSkill" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_ChatPersons" Member="SW_ChatPersons">
+    <Type Name="SW_ChatPerson">
+      <Column Name="ChatPersonId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChatPersonName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ChatPersonDateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ChatPersonDateEdit" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SW_ChatPerson_SW_ChatMessage" Member="SW_ChatMessages" ThisKey="ChatPersonId" OtherKey="ChatPersonId" Type="SW_ChatMessage" />
+      <Association Name="SW_ChatPerson_SW_ChatBlinking" Member="SW_ChatBlinkings" ThisKey="ChatPersonId" OtherKey="ChatPersonId" Type="SW_ChatBlinking" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_chat" Member="SW_chats">
+    <Type Name="SW_chat">
+      <Column Name="ChatId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChatDateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ChatDateEdit" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ChatIsClosed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SW_chat_SW_ChatMessage" Member="SW_ChatMessages" ThisKey="ChatId" OtherKey="ChatId" Type="SW_ChatMessage" />
+      <Association Name="SW_chat_SW_ChatBlinking" Member="SW_ChatBlinkings" ThisKey="ChatId" OtherKey="ChatId" Type="SW_ChatBlinking" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_ChatMessages" Member="SW_ChatMessages">
+    <Type Name="SW_ChatMessage">
+      <Column Name="ChatMsgId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChatMsgText" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ChatMsgDateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ChatPersonId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChatId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_chat_SW_ChatMessage" Member="SW_chat" ThisKey="ChatId" OtherKey="ChatId" Type="SW_chat" IsForeignKey="true" />
+      <Association Name="SW_ChatPerson_SW_ChatMessage" Member="SW_ChatPerson" ThisKey="ChatPersonId" OtherKey="ChatPersonId" Type="SW_ChatPerson" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SW_ChatBlinking" Member="SW_ChatBlinkings">
+    <Type Name="SW_ChatBlinking">
+      <Column Name="ChatBlinkingId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChatStartBlinking" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ChatPersonId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChatId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_chat_SW_ChatBlinking" Member="SW_chat" ThisKey="ChatId" OtherKey="ChatId" Type="SW_chat" IsForeignKey="true" />
+      <Association Name="SW_ChatPerson_SW_ChatBlinking" Member="SW_ChatPerson" ThisKey="ChatPersonId" OtherKey="ChatPersonId" Type="SW_ChatPerson" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SW_ServerContinents" Member="SW_ServerContinents">
+    <Type Name="SW_ServerContinent">
+      <Column Name="serverContinentId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="serverId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SearchwarContinentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SW_Server_SW_ServerContinent" Member="SW_Server" ThisKey="serverId" OtherKey="serverID" Type="SW_Server" IsForeignKey="true" />
+      <Association Name="SW_SearchWarContinent_SW_ServerContinent" Member="SW_SearchWarContinent" ThisKey="SearchwarContinentId" OtherKey="SearchWarContinentId" Type="SW_SearchWarContinent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SW_Server" Member="SW_Servers">
+    <Type Name="SW_Server">
+      <Column Name="serverID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="serverName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="SW_Server_SW_ServerContinent" Member="SW_ServerContinents" ThisKey="serverID" OtherKey="serverId" Type="SW_ServerContinent" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarCountryData" Member="SW_SearchWarCountryData1s">
+    <Type Name="SW_SearchWarCountryData1">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SearchWarCountrytId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SearchWarCountryName" Type="System.String" DbType="VarChar(140) NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarCountryTLD" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="SW_Lang_SW_SearchWarCountryData1" Member="SW_Lang" ThisKey="LangId" OtherKey="LangId" Type="SW_Lang" IsForeignKey="true" />
+      <Association Name="SW_SearchWarCountry_SW_SearchWarCountryData1" Member="SW_SearchWarCountry" ThisKey="SearchWarCountrytId" OtherKey="SearchWarCountryId" Type="SW_SearchWarCountry" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWarContinent" Member="SW_SearchWarContinents">
+    <Type Name="SW_SearchWarContinent">
+      <Column Name="SearchWarContinentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SearchWarContinentAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarContinentEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarContinentAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarContinentEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SearchWarContinent_SW_SearchWarContinentData" Member="SW_SearchWarContinentDatas" ThisKey="SearchWarContinentId" OtherKey="SearchWarContinentId" Type="SW_SearchWarContinentData" />
+      <Association Name="SW_SearchWarContinent_SW_SearchWarCountry" Member="SW_SearchWarCountries" ThisKey="SearchWarContinentId" OtherKey="SearchWarContinentId" Type="SW_SearchWarCountry" />
+      <Association Name="SW_SearchWarContinent_SW_ServerContinent" Member="SW_ServerContinents" ThisKey="SearchWarContinentId" OtherKey="SearchwarContinentId" Type="SW_ServerContinent" />
+      <Association Name="SW_SearchWarContinent_SW_SearchWar" Member="SW_SearchWars" ThisKey="SearchWarContinentId" OtherKey="SearchWarSearchContinentId" Type="SW_SearchWar" />
+      <Association Name="SW_SearchWarContinent_SW_SearchWar1" Member="SW_SearchWars1" ThisKey="SearchWarContinentId" OtherKey="SearchWarClanContinentId" Type="SW_SearchWar" />
+      <Association Name="aspnet_User_SW_SearchWarContinent" Member="aspnet_User" ThisKey="SearchWarContinentAddedUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_SearchWarContinent1" Member="aspnet_User1" ThisKey="SearchWarContinentEditUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SearchWar" Member="SW_SearchWars">
+    <Type Name="SW_SearchWar">
+      <Column Name="SearchWarId" AutoSync="Never" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SearchWarClanName" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="SearchWarClanSkillId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchWarClanContinentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchWarClanCountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchWarSearchGameId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarSearchGameTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchWarSearchSkillId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchWarSearchContinentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchWarSearchCountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SearchWarSearchXvs" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarSearchvsX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarSearchMap" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="SearchWarSearchMatchStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarComment" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SearchWarAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarUserIpAddress" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarUserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SearchWarIsRunning" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SW_SearchWar_SW_SearchWarPlayer" Member="SW_SearchWarPlayers" ThisKey="SearchWarId" OtherKey="SearchWarId" Type="SW_SearchWarPlayer" />
+      <Association Name="SW_SearchWarContinent_SW_SearchWar" Member="SW_SearchWarContinent" ThisKey="SearchWarSearchContinentId" OtherKey="SearchWarContinentId" Type="SW_SearchWarContinent" IsForeignKey="true" />
+      <Association Name="SW_SearchWarContinent_SW_SearchWar1" Member="SW_SearchWarContinent1" ThisKey="SearchWarClanContinentId" OtherKey="SearchWarContinentId" Type="SW_SearchWarContinent" IsForeignKey="true" />
+      <Association Name="SW_SearchWarCountry_SW_SearchWar" Member="SW_SearchWarCountry" ThisKey="SearchWarSearchCountryId" OtherKey="SearchWarCountryId" Type="SW_SearchWarCountry" IsForeignKey="true" />
+      <Association Name="SW_SearchWarCountry_SW_SearchWar1" Member="SW_SearchWarCountry1" ThisKey="SearchWarClanCountryId" OtherKey="SearchWarCountryId" Type="SW_SearchWarCountry" IsForeignKey="true" />
+      <Association Name="SW_SearchWarGame_SW_SearchWar" Member="SW_SearchWarGame" ThisKey="SearchWarSearchGameId" OtherKey="SearchWarGameId" Type="SW_SearchWarGame" IsForeignKey="true" />
+      <Association Name="SW_SearchWarGameType_SW_SearchWar" Member="SW_SearchWarGameType" ThisKey="SearchWarSearchGameTypeId" OtherKey="SearchWarGameTypeId" Type="SW_SearchWarGameType" IsForeignKey="true" />
+      <Association Name="SW_SearchWarSkill_SW_SearchWar" Member="SW_SearchWarSkill" ThisKey="SearchWarSearchSkillId" OtherKey="SearchWarSkillId" Type="SW_SearchWarSkill" IsForeignKey="true" />
+      <Association Name="SW_SearchWarSkill_SW_SearchWar1" Member="SW_SearchWarSkill1" ThisKey="SearchWarClanSkillId" OtherKey="SearchWarSkillId" Type="SW_SearchWarSkill" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SiteMapNodeData" Member="SW_SiteMapNodeDatas">
+    <Type Name="SW_SiteMapNodeData">
+      <Column Name="LangId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SiteMapNodeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SiteMapNodeTitle" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="SiteMapNodeRewriteRegex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SiteMapNodeRewriteUrl" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="SW_Lang_SW_SiteMapNodeData" Member="SW_Lang" ThisKey="LangId" OtherKey="LangId" Type="SW_Lang" IsForeignKey="true" />
+      <Association Name="SW_SiteMapNode_SW_SiteMapNodeData" Member="SW_SiteMapNode" ThisKey="SiteMapNodeId" OtherKey="SiteMapNodeId" Type="SW_SiteMapNode" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="staywar_searchwar.SW_SiteMapNode" Member="SW_SiteMapNodes">
+    <Type Name="SW_SiteMapNode">
+      <Column Name="SiteMapNodeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiteMapNodePath" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeAddedUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeEditUserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeSubId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteMapNodeShow" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeAddedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeEditDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeSort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiteMapNodeRewriteToUrl" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="SW_SiteMapNode_SW_SiteMapNodeRole" Member="SW_SiteMapNodeRoles" ThisKey="SiteMapNodeId" OtherKey="SiteMapNodeId" Type="SW_SiteMapNodeRole" />
+      <Association Name="SW_SiteMapNode_SW_SiteMapNodeMetaTag" Member="SW_SiteMapNodeMetaTag" ThisKey="SiteMapNodeId" OtherKey="MetaTagsId" Type="SW_SiteMapNodeMetaTag" Cardinality="One" />
+      <Association Name="SW_SiteMapNode_SW_SiteMapNodeData" Member="SW_SiteMapNodeDatas" ThisKey="SiteMapNodeId" OtherKey="SiteMapNodeId" Type="SW_SiteMapNodeData" />
+      <Association Name="aspnet_User_SW_SiteMapNode" Member="aspnet_User" ThisKey="SiteMapNodeAddedUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="aspnet_User_SW_SiteMapNode1" Member="aspnet_User1" ThisKey="SiteMapNodeEditUserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

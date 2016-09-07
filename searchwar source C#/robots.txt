@@ -1,0 +1,6 @@
+﻿User-agent: *
+Disallow: /CustomErrorPages/
+Disallow: /WebControls/
+Disallow: /Css/
+Disallow: /images/Content_Bottom-trans.png
+Disallow: /images/Content_Top-trans.png

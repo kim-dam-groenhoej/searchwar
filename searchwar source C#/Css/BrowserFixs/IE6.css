@@ -1,0 +1,3 @@
+﻿img, div, span, a, input { 
+    behavior: url('iepngfix.htc')
+}
