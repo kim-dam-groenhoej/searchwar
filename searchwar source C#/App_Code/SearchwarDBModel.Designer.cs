@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -934,6 +935,7 @@ namespace Searchwar_netModel
         private ObjectSet<SW_SiteMapNode> _SW_SiteMapNode;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -1337,11 +1339,11 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -1370,6 +1372,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1472,6 +1475,7 @@ namespace Searchwar_netModel
         partial void OnDescriptionChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1564,6 +1568,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1616,6 +1621,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2126,6 +2132,7 @@ namespace Searchwar_netModel
         partial void OnCommentChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2206,6 +2213,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2236,6 +2244,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2338,6 +2347,7 @@ namespace Searchwar_netModel
         partial void OnLoweredPathChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2440,6 +2450,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2468,6 +2479,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2546,6 +2558,7 @@ namespace Searchwar_netModel
         partial void OnLastUpdatedDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2588,6 +2601,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2616,6 +2630,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2742,6 +2757,7 @@ namespace Searchwar_netModel
         partial void OnLastUpdatedDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2822,6 +2838,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2854,6 +2871,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2980,6 +2998,7 @@ namespace Searchwar_netModel
         partial void OnLastUpdatedDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3022,6 +3041,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3052,6 +3072,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3178,6 +3199,7 @@ namespace Searchwar_netModel
         partial void OnDescriptionChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -3264,6 +3286,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -3292,6 +3315,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3373,6 +3397,7 @@ namespace Searchwar_netModel
         partial void OnIsCurrentVersionChanged();
 
         #endregion
+
     
     }
     
@@ -3408,6 +3433,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -3582,6 +3608,7 @@ namespace Searchwar_netModel
         partial void OnLastActivityDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4140,6 +4167,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4180,6 +4208,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4546,6 +4575,7 @@ namespace Searchwar_netModel
         partial void OnDetailsChanged();
 
         #endregion
+
     
     }
     
@@ -4589,6 +4619,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -4859,6 +4890,7 @@ namespace Searchwar_netModel
         partial void OnAdvertiseEditUserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -4939,6 +4971,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -4973,6 +5006,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5147,6 +5181,7 @@ namespace Searchwar_netModel
         partial void OnAdvertiseCompanyEditUserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5173,6 +5208,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5205,6 +5241,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5355,6 +5392,7 @@ namespace Searchwar_netModel
         partial void OnAdvertisePlaceEditUserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5381,6 +5419,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5407,6 +5446,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5461,6 +5501,7 @@ namespace Searchwar_netModel
         partial void OnBanIpAddressChanged();
 
         #endregion
+
     
     }
     
@@ -5494,6 +5535,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5620,6 +5662,7 @@ namespace Searchwar_netModel
         partial void OnBlogEditDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5722,6 +5765,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5752,6 +5796,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -5857,6 +5902,7 @@ namespace Searchwar_netModel
         partial void OnBlogTextChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -5937,6 +5983,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -5967,6 +6014,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6069,6 +6117,7 @@ namespace Searchwar_netModel
         partial void OnChatIsClosedChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6117,6 +6166,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6147,6 +6197,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6249,6 +6300,7 @@ namespace Searchwar_netModel
         partial void OnChatIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6329,6 +6381,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6361,6 +6414,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6487,6 +6541,7 @@ namespace Searchwar_netModel
         partial void OnChatIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6567,6 +6622,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6597,6 +6653,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6699,6 +6756,7 @@ namespace Searchwar_netModel
         partial void OnChatPersonDateEditChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -6747,6 +6805,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -6779,6 +6838,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -6905,6 +6965,7 @@ namespace Searchwar_netModel
         partial void OnFAQEditDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -7007,6 +7068,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -7037,6 +7099,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -7142,6 +7205,7 @@ namespace Searchwar_netModel
         partial void OnFAQAnswerChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -7222,6 +7286,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -7250,6 +7315,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -7328,6 +7394,7 @@ namespace Searchwar_netModel
         partial void OnLangShortnameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -7486,6 +7553,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -7528,6 +7596,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -8014,6 +8083,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarIsRunningChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -8344,6 +8414,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -8376,6 +8447,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -8502,6 +8574,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarContinentEditUserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -8692,6 +8765,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -8718,6 +8792,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -8799,6 +8874,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarContinentNameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -8879,6 +8955,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -8913,6 +8990,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -9063,6 +9141,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarContinentIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -9247,6 +9326,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -9277,6 +9357,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -9382,6 +9463,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarCountryTLDChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -9462,6 +9544,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -9496,6 +9579,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -9646,6 +9730,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarGameEditUserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -9770,6 +9855,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -9806,6 +9892,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -9980,6 +10067,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarGameTypeEditUserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -10120,6 +10208,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -10148,6 +10237,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -10250,6 +10340,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -10292,6 +10383,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -10326,6 +10418,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -10476,6 +10569,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarSkillEditUserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -10622,6 +10716,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -10650,6 +10745,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -10731,6 +10827,7 @@ namespace Searchwar_netModel
         partial void OnSearchWarSkillNameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -10811,6 +10908,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -10837,6 +10935,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -10891,6 +10990,7 @@ namespace Searchwar_netModel
         partial void OnserverNameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -10917,6 +11017,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -10945,6 +11046,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -11023,6 +11125,7 @@ namespace Searchwar_netModel
         partial void OnSearchwarContinentIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -11103,6 +11206,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -11141,6 +11245,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -11411,6 +11516,7 @@ namespace Searchwar_netModel
         partial void OnSiteMapNodeIconUrlChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -11573,6 +11679,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -11599,6 +11706,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -11728,6 +11836,7 @@ namespace Searchwar_netModel
         partial void OnSiteMapNodeRewriteUrlChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -11808,6 +11917,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -11840,6 +11950,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -11966,6 +12077,7 @@ namespace Searchwar_netModel
         partial void OnMetaTagsAddedDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -12106,6 +12218,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -12132,6 +12245,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -12453,6 +12567,7 @@ namespace Searchwar_netModel
         partial void OnMetaTagsCacheControlChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -12533,6 +12648,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -12565,6 +12681,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -12691,6 +12808,7 @@ namespace Searchwar_netModel
         partial void OnSiteMapNodeRoleAddedDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -12771,6 +12889,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -12799,6 +12918,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -12925,6 +13045,7 @@ namespace Searchwar_netModel
         partial void OndefinitionChanged();
 
         #endregion
+
     
     }
     
@@ -12954,6 +13075,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -13062,6 +13184,7 @@ namespace Searchwar_netModel
         partial void OnDescriptionChanged();
 
         #endregion
+
     
     }
     
@@ -13117,6 +13240,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -13720,6 +13844,7 @@ namespace Searchwar_netModel
         partial void OnLastActivityDateChanged();
 
         #endregion
+
     
     }
     
@@ -13747,6 +13872,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -13828,6 +13954,7 @@ namespace Searchwar_netModel
         partial void OnDataSizeChanged();
 
         #endregion
+
     
     }
     
@@ -13859,6 +13986,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -13994,6 +14122,7 @@ namespace Searchwar_netModel
         partial void OnDescriptionChanged();
 
         #endregion
+
     
     }
     
@@ -14029,6 +14158,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14218,6 +14348,7 @@ namespace Searchwar_netModel
         partial void OnLastActivityDateChanged();
 
         #endregion
+
     
     }
     
@@ -14245,6 +14376,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14302,6 +14434,7 @@ namespace Searchwar_netModel
         partial void OnRoleIdChanged();
 
         #endregion
+
     
     }
     
@@ -14333,6 +14466,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14444,6 +14578,7 @@ namespace Searchwar_netModel
         partial void OnLoweredPathChanged();
 
         #endregion
+
     
     }
     
@@ -14471,6 +14606,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14552,6 +14688,7 @@ namespace Searchwar_netModel
         partial void OnLastUpdatedDateChanged();
 
         #endregion
+
     
     }
     
@@ -14577,6 +14714,7 @@ namespace Searchwar_netModel
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -14679,9 +14817,11 @@ namespace Searchwar_netModel
         partial void OnLastUpdatedDateChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }
